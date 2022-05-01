@@ -7,8 +7,9 @@ import Footer from './pages/shared/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  document.body.style='background:black;';
   return (
-    <div className="App">
+    <div className="App" style={{background:"black"}}>
       <MyNav></MyNav>
       <Routes>
         <Route path="/" element={<Homepage></Homepage>}></Route>
@@ -18,7 +19,7 @@ function App() {
 
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
 
     </div>
   );

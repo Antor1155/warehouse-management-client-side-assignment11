@@ -1,9 +1,13 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
+import "./Homepage.css";
+
 
 const Homepage = () => {
     return (
         <div>
-           <p className='text-danger'>hello form home page</p>
+            <Banner></Banner>
+
         </div>
     );
 };

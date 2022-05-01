@@ -1,0 +1,40 @@
+.testing{
+    border: 2px solid white;
+}
+/* this porting is for testing purpose */
+
+.banner{
+    position: relative;
+}
+.bannerImg{
+    filter: brightness(50%);
+    height: 80vh;
+
+}
+.bannerContent{
+    position: absolute;
+    border: 2px solid blue;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: white;
+}
+.logo{
+    width: 15%;
+ 
+    padding: 0;
+}
+.logoname{
+    border:2px solid white;
+    font-size: 4rem;
+    margin-bottom: 40px;
+    padding-top: 0 ;
+    margin-top: 0;
+}
+.logoname span{
+    color: rgb(196, 28, 28);
+}
+.felxbox{
+    width: 40%;
+}
