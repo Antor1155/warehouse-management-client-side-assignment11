@@ -12,5 +12,18 @@
     height: 500px;
     width: 60%;
     border: 2px solid black;
+    overflow: hidden;
 
+}
+.tinyIntevtoryContainer img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.customBorder{
+    border: 2px solid red;
+}
+
+tr{  
+    background-color: rgb(194, 145, 145);
 }

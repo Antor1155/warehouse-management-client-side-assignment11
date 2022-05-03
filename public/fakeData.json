@@ -1,0 +1,56 @@
+[
+    {
+      "id": "627123ce6a0301f6c27fee25",
+      "image": "https://i.ibb.co/H727c40/download.jpg",
+      "name": "rice bag",
+      "price": 6,
+      "description": "5kd each bag, small and fresh ",
+      "supplierName": " jonny rock",
+      "quantity": 7
+    },
+    {
+      "id": "627123ce24aaee5851d34165",
+      "image": "https://i.ibb.co/H727c40/download.jpg",
+      "name": "potato bag",
+      "price": 13,
+      "description": "2kg each bag, round and red one ",
+      "supplierName": "james bond ",
+      "quantity": 7
+    },
+    {
+      "id": "627123cebcc2310ac5a333df",
+      "image": "https://i.ibb.co/H727c40/download.jpg",
+      "name": "red chilli",
+      "price": 8,
+      "description": "500g each bag, most spicy one",
+      "supplierName": " Allu arjun",
+      "quantity": 7
+    },
+    {
+      "id": "627123ce7842e3f63cb35f15",
+      "image": "https://i.ibb.co/H727c40/download.jpg",
+      "name": "onion",
+      "price": 8,
+      "description": "500g each bag, dry one ",
+      "supplierName": " jibril amin",
+      "quantity": 7
+    },
+    {
+      "id": "627123ce00dbefc0f60408be",
+      "image": "https://i.ibb.co/H727c40/download.jpg",
+      "name": "garlic",
+      "price": 15,
+      "description": "500g each bag, bigger sized one ",
+      "supplierName": " golap babu",
+      "quantity": 7
+    },
+    {
+      "id": "627123ce6017dad9ec6c1058",
+      "image": "https://i.ibb.co/H727c40/download.jpg",
+      "name": "tomato",
+      "price": 10,
+      "description": "1kg each bag,bigger sized one ",
+      "supplierName": "mohammad ali ",
+      "quantity": 7
+    }
+  ]
