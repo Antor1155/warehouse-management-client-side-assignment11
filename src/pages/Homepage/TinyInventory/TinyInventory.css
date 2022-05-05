@@ -11,34 +11,19 @@
     margin-top: 30px;
     height: 500px;
     width: 60%;
-    border-radius: 33px;
+    border: 2px solid black;
     overflow: hidden;
 
 }
 .tinyIntevtoryContainer img{
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
 }
-tr{  
-    background-color:rgba(138, 201, 152, 0.244) ;
-    text-align: center;
-}
-th ,td{
-    padding-bottom: 15px;
+.customBorder{
+    border: 2px solid red;
 }
 
-.manageInventoryBtn{
-    background-color: rgb(97, 167, 228);
-    border-radius: 15px;
-    border: 0;
-}
-.manageInventoryBtn:hover{
-    background-color: rgb(5, 78, 143);
-    color: white;
-}
-.gradientDivFromWhite{
-    background-image: linear-gradient(white 40%, black);
-    height: 50px;
-    color: white;
+tr{  
+    background-color: rgb(194, 145, 145);
 }
