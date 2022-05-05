@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import Graphs from '../Graphs/Graphs';
 import TinyInventory from '../TinyInventory/TinyInventory';
 import "./Homepage.css";
 
@@ -9,6 +10,8 @@ const Homepage = () => {
         <div>
             <Banner></Banner>
             <TinyInventory></TinyInventory>
+            <Graphs></Graphs>
+            
         </div>
     );
 };

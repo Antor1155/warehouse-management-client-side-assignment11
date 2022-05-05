@@ -2,9 +2,12 @@
    background-color: white;
 }
 .gradientDivFromBlack{
-    background-image: linear-gradient(black 60%, white);
-    height: 80px;
-    color: white;
+    background-image: linear-gradient(black 40%, white);
+    height: 50px;
+}
+.gradientDivFromWhite{
+    background-image: linear-gradient(white 40%, black);
+    height: 50px;
 }
 .tinyIntevtoryContainer{
     margin: auto;
