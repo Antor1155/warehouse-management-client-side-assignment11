@@ -2,7 +2,7 @@
     {
       "id": "627123ce6a0301f6c27fee25",
       "image": "https://i.ibb.co/H727c40/download.jpg",
-      "name": "rice bag",
+      "name": "rice",
       "price": 6,
       "description": "5kd each bag, small and fresh ",
       "supplierName": " jonny rock",
@@ -11,11 +11,11 @@
     {
       "id": "627123ce24aaee5851d34165",
       "image": "https://i.ibb.co/H727c40/download.jpg",
-      "name": "potato bag",
+      "name": "potato",
       "price": 13,
       "description": "2kg each bag, round and red one ",
       "supplierName": "james bond ",
-      "quantity": 7
+      "quantity": 17
     },
     {
       "id": "627123cebcc2310ac5a333df",

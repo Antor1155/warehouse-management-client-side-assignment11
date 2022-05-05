@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./TinyInventory.css"
 
-const TinyInventory = () => {
-    const [products, setproducts] = useState([]);
-    useEffect(() => {
-        fetch('fakeData.json')
-            .then(res => res.json())
-            .then(data => setproducts(data));
-    }, [])
+const TinyInventory = ({products}) => {
+    
     return (
         <div className='tinyInventory '>
             <div className='gradientDivFromBlack'> </div>
-            <h1 className='mt-4 mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
-            <table className='tinyIntevtoryTable pt-3'>
+            <h1 className='sectionStart mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
+            <table className='tinyIntevtoryTable mt-5'>
                 <tr>
                     <th> </th>
                     <th>Name</th>
@@ -37,7 +32,6 @@ const TinyInventory = () => {
             <div className='text-center'>
                 <button className='manageInventoryBtn mt-4  py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
             </div>
-            <div className='gradientDivFromWhite'></div>
         </div>
     );
 };

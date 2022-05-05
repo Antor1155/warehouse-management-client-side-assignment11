@@ -9,6 +9,9 @@
     background-image: linear-gradient(white 40%, black);
     height: 50px;
 }
+.sectionStart{
+    margin-top: 4rem;
+}
 .tinyIntevtoryTable{
     margin: auto;
     margin-top: 30px;

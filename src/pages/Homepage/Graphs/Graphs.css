@@ -1,4 +1,15 @@
-.graphs{
-    color: white;
-    padding-top: 55px;
+.graphs {
+    background-color: white;
+    padding-top: 7rem;
+    text-align: center;
+}
+
+.chart {
+    /* width: 80%; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgba(183, 105, 105, 0.132);
+
 }
