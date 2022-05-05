@@ -19,14 +19,14 @@ const Banner = () => {
                      <p>If you face any difficulty or need help, happy to be contacted. We have a 24 hour support session.
                      </p>
                      <a target="_blank"  rel="noreferrer" href="https://www.facebook.com/md.antor.16
-                     "><button className='link-button px-4 py-2'> visit support</button></a>
+                     "><button className='customButton px-4 py-2'> visit support</button></a>
                      
                  </div>
                  <div className='testing felxbox'>
                      <h2 className='testing'>Our sourcing sides</h2>
                      <p>We have done business over 20 years and around 50 countries. With good experiences comes good sources.</p>
                      <a target="_blank"  rel="noreferrer" href="https://www.facebook.com/md.antor.16
-                     "><button className='link-button px-4 py-2'> visit sources</button></a>
+                     "><button className='customButton px-4 py-2'> visit sources</button></a>
                  </div>
              
              </div>    
