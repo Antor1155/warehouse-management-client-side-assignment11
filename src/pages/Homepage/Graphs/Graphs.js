@@ -8,7 +8,7 @@ const Graphs = ({ products }) => {
         <div className='graphs'>
             <h1>Total <span className='customRed'>sotred</span> Amount</h1>
             <p>visualization of <strong className='customRed'>{products.length}</strong> types of producs' availability</p>
-            <ResponsiveContainer className='chart' width="80%" height={500}>
+            <ResponsiveContainer className='chart my-4' width="70%" height={500}>
                 <BarChart
                     width={1000}
                     height={500}
