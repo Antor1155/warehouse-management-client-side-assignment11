@@ -1,0 +1,16 @@
+.footer{
+    color: white;
+    padding-top: 95px;
+    text-align: center;
+}
+a{
+    color: white; 
+    text-decoration: none;
+ }
+.second:hover{
+    
+    fill: rgb(238, 129, 129);
+}
+svg:hover{
+    fill: rgb(106, 183, 242);
+}
