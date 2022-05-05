@@ -35,8 +35,13 @@
 .felxbox{
     width: 40%;
 }
-.link-button{
+.customButton{
     background-color: rgb(196, 28, 28);
     color: white;
     border-radius: 17px;
+    border: none;
+}
+.customButton:hover{
+    background-color:rgb(236, 149, 149);
+    color: black;
 }

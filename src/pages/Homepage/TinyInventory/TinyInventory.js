@@ -11,11 +11,10 @@ const TinyInventory = () => {
     return (
         <div className='tinyInventory '>
             <div className='gradientDivFromBlack'> </div>
-            <h1 className='mt-3 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
-            <table className='tinyIntevtoryContainer pt-3'>
+            <h1 className='mt-4 mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
+            <table className='tinyIntevtoryTable pt-3'>
                 <tr>
                     <th> </th>
-                    <th>Image</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -26,15 +25,18 @@ const TinyInventory = () => {
                 {products.map(product =>
                     <tr className=''>
                         <td> <img src={product.image} alt="product" /></td>
-                        <td className='customBorder'>{product.name}</td>
-                        <td className='customBorder'>{product.description}</td>
-                        <td className='customBorder'>{product.price}</td>
-                        <td className='customBorder'>{product.supplierName}</td>
-                        <td className='customBorder'>{product.quantity}</td>
-                        <td> <button> Update</button></td>
+                        <td className='customRed'>{product.name}</td>
+                        <td>{product.description}</td>
+                        <td>$ {product.price}</td>
+                        <td>{product.supplierName}</td>
+                        <td>{product.quantity}</td>
+                        <td> <button className='customButton'> Update</button></td>
                     </tr>)
                 }
             </table>
+            <div className='text-center'>
+                <button className='manageInventoryBtn mt-4  py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
+            </div>
             <div className='gradientDivFromWhite'></div>
         </div>
     );
