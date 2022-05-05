@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import Graphs from '../Graphs/Graphs';
+import Management from '../Management/Management';
 import TinyInventory from '../TinyInventory/TinyInventory';
 import "./Homepage.css";
 
@@ -18,7 +19,8 @@ const Homepage = () => {
         <div>
             <Banner></Banner>
             <TinyInventory products={products}></TinyInventory>
-            <Graphs products={products}></Graphs>  
+            <Graphs products={products}></Graphs> 
+            <Management></Management> 
         </div>
     );
 };

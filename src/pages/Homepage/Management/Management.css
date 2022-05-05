@@ -1,0 +1,14 @@
+.management{
+    color: white;
+    padding-top: 3rem;
+    width: 80%;
+}
+.management img{
+    width: 300px;
+    height: 400px;
+    border-radius: 35px;
+    box-shadow: 50px -30px 15px rgb(96, 215, 146);
+}
+blockquote{
+    font-style: italic;
+}

@@ -8,7 +8,7 @@ const Graphs = ({ products }) => {
         <div className='graphs'>
             <h1>Total <span className='customRed'>sotred</span> Amount</h1>
             <p>visualization of <strong className='customRed'>{products.length}</strong> types of producs' availability</p>
-            <ResponsiveContainer className='chart my-4' width="70%" height={500}>
+            <ResponsiveContainer className='chart my-4' width="70%" height={450}>
                 <BarChart
                     width={1000}
                     height={500}
@@ -30,8 +30,8 @@ const Graphs = ({ products }) => {
                 </BarChart>
               </ResponsiveContainer>
             
-            <p className='my-3'>For more info please visit <span className='text-primary'><strong className='pageLink'><Link to="/home">Manage Inventory page</Link> </strong></span> Manage Inventory page</p>
-
+            <p className='mb-5'>For more info please visit <span className='text-primary'><strong className='pageLink'><Link to="/home">Manage Inventory page</Link> </strong></span> Manage Inventory page</p>
+            <div className='gradientDivFromWhite'></div>
         </div>
     );
 };
