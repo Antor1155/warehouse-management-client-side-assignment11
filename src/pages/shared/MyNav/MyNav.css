@@ -1,0 +1,22 @@
+.myNav{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(48 66 49 / 62%);
+    padding-bottom: 1rem;
+    padding-right: 2rem; 
+    padding-top: .7rem;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    margin-bottom: .7rem;
+    
+}
+.myNav a{
+    text-decoration: none;
+    color: white;
+    padding-left: 2rem;
+}
+.myNav h3, .navlinks{
+    display: inline;
+}

@@ -7,8 +7,8 @@ import wroker2 from "../../../Images/Workers/worker2.jpg";
 const Management = () => {
     return (
         <div className='management mx-auto'>
-            <h1 className='text-center mb-5'>Management</h1>
-            <div className='d-flex flex-row-reverse justify-content-around align-items-center'>
+            <h1 className='text-center mb-5 pb-4'>Management</h1>
+            <div className='mb-5 d-flex flex-row-reverse justify-content-around align-items-center'>
                 <img src={wroker1} alt="" />
                 <div>
                     <h3 className='customRed'>James Robert</h3>
