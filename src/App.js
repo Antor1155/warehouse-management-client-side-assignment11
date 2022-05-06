@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Blog from './pages/Blog/Blog';
 import { useState } from 'react';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
+import AddItem from './pages/AddItem/AddItem';
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
         <Route path="/home" element={<Homepage setNotFoundPage={setNotFoundPage}></Homepage>}></Route>
         <Route path='/blogs' element={<Blog setNotFoundPage={setNotFoundPage}></Blog>}> </Route>
         <Route path="/manageInventory" element={<ManageInventory setNotFoundPage={setNotFoundPage}></ManageInventory>}> </Route>
+        <Route path="/additems" element={<AddItem setNotFoundPage={setNotFoundPage}></AddItem>}> </Route>
 
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
       </Routes>

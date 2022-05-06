@@ -1,6 +1,7 @@
 [
     {
       "id": "627123ce6a0301f6c27fee25",
+      "addedBy":"email",
       "image": "https://i.ibb.co/H727c40/download.jpg",
       "name": "rice",
       "price": 6,
@@ -10,6 +11,7 @@
     },
     {
       "id": "627123ce24aaee5851d34165",
+      "addedBy":"email",
       "image": "https://i.ibb.co/H727c40/download.jpg",
       "name": "potato",
       "price": 13,
@@ -19,6 +21,7 @@
     },
     {
       "id": "627123cebcc2310ac5a333df",
+      "addedBy":"email",
       "image": "https://i.ibb.co/H727c40/download.jpg",
       "name": "red chilli",
       "price": 8,
@@ -28,6 +31,7 @@
     },
     {
       "id": "627123ce7842e3f63cb35f15",
+      "addedBy":"email",
       "image": "https://i.ibb.co/H727c40/download.jpg",
       "name": "onion",
       "price": 8,
@@ -37,6 +41,7 @@
     },
     {
       "id": "627123ce00dbefc0f60408be",
+      "addedBy":"email",
       "image": "https://i.ibb.co/H727c40/download.jpg",
       "name": "garlic",
       "price": 15,
@@ -46,6 +51,7 @@
     },
     {
       "id": "627123ce6017dad9ec6c1058",
+      "addedBy":"email",
       "image": "https://i.ibb.co/H727c40/download.jpg",
       "name": "tomato",
       "price": 10,
