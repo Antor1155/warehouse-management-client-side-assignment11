@@ -1,0 +1,23 @@
+.nothignFound{
+    position: relative;
+}
+.nothignFound a{
+    position: absolute;
+    top: 5%;
+    left:9%;
+    animation:flash 1s infinite alternate;
+    padding: 1rem;
+    border-radius: 20%;
+}
+.errorImg{
+    width: 100vw;
+    height: 100vh;
+}
+@keyframes flash{
+    from{
+        background-color: rgb(209, 132, 132);
+    }
+    to{
+        background-color: rgb(193, 228, 167);
+    }
+}
