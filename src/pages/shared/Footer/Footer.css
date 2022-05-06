@@ -2,6 +2,8 @@
     color: white;
     padding-top: 50px;
     text-align: center;
+    background-color: black;
+    padding-bottom: 10px;
 }
 .horizontalLine{
     height: 10px;

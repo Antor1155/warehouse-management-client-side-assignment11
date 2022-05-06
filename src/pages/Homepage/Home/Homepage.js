@@ -3,8 +3,6 @@ import Banner from '../Banner/Banner';
 import Graphs from '../Graphs/Graphs';
 import Management from '../Management/Management';
 import TinyInventory from '../TinyInventory/TinyInventory';
-import "./Homepage.css";
-
 
 const Homepage = (props) => {
     console.log('coming', props.setNotFoundPage);
@@ -16,11 +14,12 @@ const Homepage = (props) => {
         fetch('fakeData.json')
             .then(res => res.json())
             .then(data => setproducts(data));
+            document.body.style = 'background:black;';
     }, [])
 
 
     return (
-        <div>
+        <div className='homepage'>
             <Banner></Banner>
             <TinyInventory products={products}></TinyInventory>
             <Graphs products={products}></Graphs> 

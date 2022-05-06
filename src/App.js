@@ -10,14 +10,14 @@ import { useState } from 'react';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
 
 function App() {
-  document.body.style = 'background:black;';
+  
 
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
   const [notFoundPage, setNotFoundPage] = useState(false);
   console.log("from app js page",notFoundPage)
 
   return (
-    <div className="App" style={{ background: "black" }}>
+    <div className="App">
       {notFoundPage || <MyNav></MyNav>}
 
       <Routes>

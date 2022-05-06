@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Blog.css"
 
 const Blog = ({setNotFoundPage}) => {
     setNotFoundPage(false);
+    useEffect(()=>{
+        document.body.style = 'background:black;';
+    },[])
     return (
         <div className='blog mx-auto mt-4 text-center'>
             <h2 className='mb-4'> Blogs</h2>
