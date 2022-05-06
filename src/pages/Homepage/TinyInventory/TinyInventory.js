@@ -1,12 +1,14 @@
 import React from 'react';
 import "./TinyInventory.css"
 
-const TinyInventory = ({products}) => {
-    
+const TinyInventory = (props) => {
+    let products = props.products;
+    let children = props.children;
     return (
         <div className='tinyInventory '>
             <div className='gradientDivFromBlack'> </div>
             <h1 className='sectionStart mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
+            {children? children: ""}
             <table className='tinyIntevtoryTable mt-5'>
                 <tr>
                     <th> </th>

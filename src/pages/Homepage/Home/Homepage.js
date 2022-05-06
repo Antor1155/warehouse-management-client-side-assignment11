@@ -6,10 +6,11 @@ import TinyInventory from '../TinyInventory/TinyInventory';
 import "./Homepage.css";
 
 
-const Homepage = ({setNotFoundPage}) => {
-    setNotFoundPage(false);
-
-    
+const Homepage = (props) => {
+    console.log('coming', props.setNotFoundPage);
+    if (props.setNotFoundPage){
+        props.setNotFoundPage(false);
+    }
     const [products, setproducts] = useState([]);
     useEffect(() => {
         fetch('fakeData.json')
