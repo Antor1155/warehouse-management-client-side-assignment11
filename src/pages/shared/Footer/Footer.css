@@ -1,16 +1,21 @@
 .footer{
     color: white;
-    padding-top: 95px;
+    padding-top: 50px;
     text-align: center;
 }
+.horizontalLine{
+    height: 10px;
+    box-shadow: -2px -10px 60px red;
+    background-color: rgb(33,5,4);
+    margin-bottom: 45px;
+}
 a{
-    color: white; 
-    text-decoration: none;
- }
-.second:hover{
-    
-    fill: rgb(238, 129, 129);
+    color: white!important;
+    text-decoration: none!important;
 }
 svg:hover{
     fill: rgb(106, 183, 242);
 }
+/* footer svg:nth-child(1):hover {
+    fill: red;
+} */
