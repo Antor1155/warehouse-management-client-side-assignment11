@@ -13,6 +13,7 @@ function App() {
     <div className="App" style={{background:"black"}}>
       <MyNav></MyNav>
       <Routes>
+
         <Route path="/" element={<Homepage></Homepage>}></Route>
         <Route path="/home" element={<Homepage></Homepage>}></Route>
         <Route path='/blogs' element={<Blog></Blog>}> </Route>

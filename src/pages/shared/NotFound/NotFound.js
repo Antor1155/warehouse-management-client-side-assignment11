@@ -4,11 +4,6 @@ import notfound from "../../../Images/notfound/notfound.jpg"
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
-    useEffect(() => {
-        document.querySelector(".footer").style.display = "none";
-        document.querySelector(".myNav").style.display = "none";
-    }, [])
-
 
     return (
         <div className='nothignFound'>

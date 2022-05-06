@@ -7,6 +7,7 @@ import "./Homepage.css";
 
 
 const Homepage = () => {
+
     const [products, setproducts] = useState([]);
     useEffect(() => {
         fetch('fakeData.json')
