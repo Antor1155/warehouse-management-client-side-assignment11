@@ -1,7 +1,8 @@
 import React from 'react';
 import "./Blog.css"
 
-const Blog = () => {
+const Blog = ({setNotFoundPage}) => {
+    setNotFoundPage(false);
     return (
         <div className='blog mx-auto mt-4 text-center'>
             <h2 className='mb-4'> Blogs</h2>

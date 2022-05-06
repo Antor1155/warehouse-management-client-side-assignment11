@@ -3,8 +3,8 @@ import "./NotFound.css"
 import notfound from "../../../Images/notfound/notfound.jpg"
 import { Link } from 'react-router-dom';
 
-const NotFound = () => {
-
+const NotFound = ({setNotFoundPage}) => {
+    setNotFoundPage(true);
     return (
         <div className='nothignFound'>
             <Link to='/home' >

@@ -6,23 +6,25 @@ import MyNav from './pages/shared/MyNav/MyNav';
 import Footer from './pages/shared/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Blog from './pages/Blog/Blog';
+import { useState } from 'react';
 
 function App() {
   document.body.style='background:black;';
+
+  // conditional rendering of footer and header in other pages than 404 pages, all kinds
+  const[notFoundPage, setNotFoundPage] =useState(true);
+
   return (
     <div className="App" style={{background:"black"}}>
-      <MyNav></MyNav>
+      {notFoundPage ||<MyNav></MyNav>}
       <Routes>
 
-        <Route path="/" element={<Homepage></Homepage>}></Route>
-        <Route path="/home" element={<Homepage></Homepage>}></Route>
-        <Route path='/blogs' element={<Blog></Blog>}> </Route>
- 
-
-
-        <Route path="*" element={<NotFound></NotFound>}></Route>
+        <Route path="/" element={<Homepage ></Homepage>}></Route>
+        <Route path="/home" element={<Homepage setNotFoundPage={setNotFoundPage}></Homepage>}></Route>
+        <Route path='/blogs' element={<Blog setNotFoundPage={setNotFoundPage}></Blog>}> </Route>
+        <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      {notFoundPage ||<Footer></Footer>}
 
     </div>
   );
