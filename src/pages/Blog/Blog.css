@@ -1,0 +1,21 @@
+.blog{
+    color: white;
+    /* background-color: rgba(15, 50, 50, 0.323); */
+    background-image: linear-gradient(black, rgba(18, 63, 63, 0.323) 10%,rgba(18, 63, 63, 0.323) 90%, black);
+    padding: 2rem;
+    border: none;
+}
+.blog p:nth-child(2n){
+    font-style: italic;
+    margin-bottom: 5rem;
+    text-align: justify;
+}
+.blog p:nth-child(2n-1){
+    font-size: large;
+}
+.ques{
+    color: rgb(236, 163, 163);
+}
+.ans{
+    color: rgb(68, 203, 115);
+}
