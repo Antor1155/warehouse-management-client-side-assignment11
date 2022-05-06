@@ -9,6 +9,7 @@ const AddItem = ({setNotFoundPage}) => {
     const handleSubmit=(event)=>{
         event.preventDefault();
         event.target.reset();
+        
         window.alert( "working");
 
     }
