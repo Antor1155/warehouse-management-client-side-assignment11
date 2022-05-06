@@ -1,18 +1,19 @@
 .tinyInventory{
-   background-color: white;
+   background-color: rgb(240, 238, 238);
 }
 .gradientDivFromBlack{
-    background-image: linear-gradient(black 40%, white);
+    background-image: linear-gradient(black 40%, rgb(240, 238, 238));
     height: 50px;
 }
 .gradientDivFromWhite{
-    background-image: linear-gradient(white 40%, black);
+    background-image: linear-gradient(rgb(240, 238, 238) 40%, black);
     height: 50px;
 }
 .sectionStart{
     margin-top: 4rem;
 }
 .tinyIntevtoryTable{
+    border: 2px solid black;
     margin: auto;
     margin-top: 30px;
     height: 500px;

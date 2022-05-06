@@ -9,13 +9,14 @@
     background-color: rgb(33,5,4);
     margin-bottom: 45px;
 }
-a{
+.footer a{
     color: white!important;
     text-decoration: none!important;
 }
 svg:hover{
     fill: rgb(106, 183, 242);
 }
-/* footer svg:nth-child(1):hover {
+/* isn't workig, later try to solve why? 
+ svg:nth-child(2):hover {
     fill: red;
 } */

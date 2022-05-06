@@ -29,7 +29,7 @@ const TinyInventory = ({products}) => {
                     </tr>)
                 }
             </table>
-            <div className='text-center'>
+            <div className='text-center '>
                 <button className='manageInventoryBtn mt-4  py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
             </div>
         </div>
