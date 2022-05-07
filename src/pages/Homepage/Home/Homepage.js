@@ -18,8 +18,6 @@ const Homepage = (props) => {
             document.body.style = 'background:black;';
     }, [])
 
-    console.log('from homepage js',products)
-
     return (
         <div className='homepage'>
             <Banner></Banner>

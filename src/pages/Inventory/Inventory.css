@@ -1,0 +1,10 @@
+.restockSection{
+    background-color: rgb(191, 244, 226);
+    width: 80%;
+    border-radius: 15px; 
+}
+.productDetailImg{
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+}
