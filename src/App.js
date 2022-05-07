@@ -11,10 +11,10 @@ import ManageInventory from './pages/ManageInventory/ManageInventory';
 import AddItem from './pages/AddItem/AddItem';
 import Inventory from './pages/Inventory/Inventory';
 import MyItems from './pages/MyItems/MyItems';
+import Login from './pages/LoginRegister/Login/Login';
+
 
 function App() {
-  
-
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
   const [notFoundPage, setNotFoundPage] = useState(false);
 
@@ -30,6 +30,7 @@ function App() {
         <Route path="/additems" element={<AddItem setNotFoundPage={setNotFoundPage}></AddItem>}> </Route>
         <Route path="/inventory/:id" element={<Inventory setNotFoundPage={setNotFoundPage}></Inventory>}> </Route>
         <Route path="/myitems" element={<MyItems setNotFoundPage={setNotFoundPage}></MyItems>}> </Route>
+        <Route path="//login" element={<Login setNotFoundPage={setNotFoundPage}></Login>}> </Route>
     
 
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
