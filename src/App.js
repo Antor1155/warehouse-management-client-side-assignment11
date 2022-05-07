@@ -9,6 +9,7 @@ import Blog from './pages/Blog/Blog';
 import { useState } from 'react';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
 import AddItem from './pages/AddItem/AddItem';
+import Inventory from './pages/Inventory/Inventory';
 
 function App() {
   
@@ -27,6 +28,8 @@ function App() {
         <Route path='/blogs' element={<Blog setNotFoundPage={setNotFoundPage}></Blog>}> </Route>
         <Route path="/manageInventory" element={<ManageInventory setNotFoundPage={setNotFoundPage}></ManageInventory>}> </Route>
         <Route path="/additems" element={<AddItem setNotFoundPage={setNotFoundPage}></AddItem>}> </Route>
+        <Route path="/inventory/:id" element={<Inventory setNotFoundPage={setNotFoundPage}></Inventory>}> </Route>
+    
 
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
       </Routes>

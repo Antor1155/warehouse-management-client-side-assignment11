@@ -1,5 +1,6 @@
 .addItems{
-    background-color:  antiquewhite;
+    /* background-color:  rgb(191, 244, 220); */
+    border: 2px solid sandybrown;
     width: 85%;
     border-radius: 10%;
 }

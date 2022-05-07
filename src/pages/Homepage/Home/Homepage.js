@@ -5,7 +5,7 @@ import Management from '../Management/Management';
 import TinyInventory from '../TinyInventory/TinyInventory';
 
 const Homepage = (props) => {
-    console.log('coming', props.setNotFoundPage);
+    // console.log('coming', props.setNotFoundPage);
     if (props.setNotFoundPage){
         props.setNotFoundPage(false);
     }

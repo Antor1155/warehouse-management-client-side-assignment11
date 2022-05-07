@@ -34,6 +34,18 @@ th, td{
     padding-left: 10px;
     padding-right: 10px;
 }
+.updateButton{
+    border: none;
+    background-color: rgb(16, 138, 16);
+    border-radius: 22px;
+    color: white;
+}
+.updateButton:hover{
+    border: none;
+    background-color: rgb(86, 235, 86);
+    border-radius: 22px;
+    color: black;
+}
 .manageInventoryBtn{
     border: none;
     border-radius: 10px;

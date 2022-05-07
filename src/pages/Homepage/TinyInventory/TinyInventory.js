@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./TinyInventory.css"
 
 const TinyInventory = (props) => {
@@ -28,13 +29,15 @@ const TinyInventory = (props) => {
                             <td>$ {product.price}</td>
                             <td>{product.supplierName}</td>
                             <td>{product.quantity}</td>
-                            <td> <button className='customButton'> Update</button></td>
+                            <td><Link to={`/inventory/${product.id}`}> <button className='updateButton px-2'> Update</button></Link></td>
                         </tr>)
                     }
                 </tbody>
             </table>
             <div className='text-center '>
-                <button className='manageInventoryBtn mt-4  py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
+                <Link to="/manageInventory">
+                    <button className='manageInventoryBtn mt-4  py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
+                </Link>
             </div>
         </div>
     );
