@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "./Inventory.css";
 
 const Inventory = ({ setNotFoundPage }) => {
@@ -19,6 +19,7 @@ const Inventory = ({ setNotFoundPage }) => {
     let productQuantity = product?.quantity;
     return (
         <div className='container inventory'>
+            <h2 className='text-center'>--Update and manage the product--</h2>
             <div className='d-flex justify-content-around align-items-center my-5 pb-3'>
                 <img className='productDetailImg' src={product?.image} alt="product" />
                 <div>
@@ -46,7 +47,11 @@ const Inventory = ({ setNotFoundPage }) => {
                     <input type="number" />
                     <input className='btn  btn-success ms-3' type="submit" />
                 </form>
-
+            </div>
+            <div className='text-center pb-5 mb-5'>
+                <Link to="/manageInventory">
+                    <button className='manageInventoryBtn py-2  px-2 mx-auto'><strong> Manage all Inventory</strong></button>
+                </Link>
             </div>
         </div>
     );
