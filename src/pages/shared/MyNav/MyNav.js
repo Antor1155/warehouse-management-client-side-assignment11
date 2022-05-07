@@ -6,7 +6,7 @@ import auth from '../../../utilities/firebase.init';
 import "./MyNav.css";
 
 const MyNav = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const HandleSignOut = ()=>{
         signOut(auth);
     }

@@ -21,9 +21,6 @@ function App() {
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
   const [notFoundPage, setNotFoundPage] = useState(false);
 
-  // trying context api 
-  const Context = React.createContext();
-
   return (
     <div className="App">
       <MyNav></MyNav>
