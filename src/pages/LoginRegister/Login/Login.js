@@ -1,15 +1,30 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import googleImg from "../../../Images/logos/google.png";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../utilities/firebase.init';
+import Loading from '../../shared/Loading/Loading';
 
 const Login = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
+
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+
     useEffect(() => {
         document.body.style = 'background:rgb(240, 238, 238)';
     }, [])
+
+    // sign in with email password
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -17,6 +32,8 @@ const Login = ({ setNotFoundPage }) => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
+
+        signInWithEmailAndPassword(email, password);
 
         event.target.reset();
 
@@ -29,8 +46,25 @@ const Login = ({ setNotFoundPage }) => {
         signInWithGoogle();
     }
 
+    if (googleUser || user) {
+        console.log(from);
+        navigate(from, { replace: true });
+        console.log('this line did work');
+    }
+    if (loading || googleLoading) {
+        return (<Loading></Loading>)
+    }
+
+    let commonError = '';
+    if (error || googleError) {
+        commonError = error || googleError;
+    }
+
     return (
         <div className='loginPage mt-4 mb-5 pb-5'>
+            {error || googleError ?
+                <h3 className='text-center text-danger'>error : {commonError.message}</h3> : ""
+            }
             <h2 className='text-center my-3'>Welcome Back</h2>
             <div className='d-flex justify-content-center'>
                 <form className='loginForm' onSubmit={handleFormSubmit}>

@@ -1,8 +1,15 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../utilities/firebase.init';
 import "./MyNav.css";
 
 const MyNav = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const HandleSignOut = ()=>{
+        signOut(auth);
+    }
     return (
         <div className='myNav mx-auto'>
             <div>
@@ -17,7 +24,7 @@ const MyNav = () => {
                 <Link to="/manageInventory">Manage Inventory</Link>
                 <Link to="/additems">Add items</Link>
                 <Link to="/myitems">My items</Link>
-                <Link to="/login">Login</Link>
+                {user? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button>:<Link to="/login">Login</Link>}
             </div>
         </div>
     );

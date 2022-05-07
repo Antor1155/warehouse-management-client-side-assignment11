@@ -34,7 +34,7 @@ function App() {
         <Route path='/blogs' element={<Blog setNotFoundPage={setNotFoundPage}></Blog>}> </Route>
 
         {/* protected routes  */}
-        <Route path="/manageInventory" element={<RequireAuth setNotFoundPage={setNotFoundPage}>
+        <Route path="/manageInventory" element={<RequireAuth>
           <ManageInventory setNotFoundPage={setNotFoundPage}></ManageInventory> </RequireAuth>}>
         </Route>
 

@@ -20,3 +20,9 @@
 .myNav h3, .navlinks{
     display: inline;
 }
+.signOutBtn{
+    background-color: transparent;
+    color: rgb(241, 129, 129);
+    border: none;
+    margin-left: 1rem;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleImg from "../../../Images/logos/google.png";
 import auth from '../../../utilities/firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -7,6 +7,11 @@ import Loading from '../../shared/Loading/Loading';
 
 const Register = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
+
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
     useEffect(() => {
         document.body.style = 'background:rgb(240, 238, 238)';
     }, [])
@@ -39,17 +44,24 @@ const Register = ({ setNotFoundPage }) => {
         signInWithGoogle();
     }
 
-
+    if(user || googleUser){
+        console.log(from);
+        navigate(from, { replace: true });
+        console.log('this line did work');
+    }
     if (loading || googleLoading) {
         return (<Loading></Loading>)
     }
 
+    let commonError = '';
     if (error || googleError) {
-        console.log(error);
-        return (<h2 className='text-center text-danger'> error</h2>);
+        commonError = error || googleError;
     }
     return (
         <div className='loginPage mt-4 mb-5 pb-5'>
+            {error || googleError ?
+                <h3 className='text-center text-danger'>error : {commonError.message}</h3> : ""
+            }
             <h2 className='text-center my-3'> We welcome <span className='customRed'> you with all </span> our heart</h2>
             <h5 className='text-center mt-5 mb-4'>Register please</h5>
 
