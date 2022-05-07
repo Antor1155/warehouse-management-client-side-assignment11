@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import googleImg from "../../../Images/logos/google.png";
+import auth from '../../../utilities/firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../shared/Loading/Loading';
 
 const Register = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
@@ -8,16 +11,35 @@ const Register = ({ setNotFoundPage }) => {
         document.body.style = 'background:rgb(240, 238, 238)';
     }, [])
 
-    const handleFormSubmit = event => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+
+    const handleFormSubmit = async(event) => {
         event.preventDefault();
 
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
 
+        await createUserWithEmailAndPassword(email, password);
+
         event.target.reset();
 
     }
+    if(loading){
+        return(<Loading></Loading>)
+    }
+    if(error){
+        console.log(error);
+        return(<h2> error</h2>);
+    }
+
+    console.log(user?.user?.email);
 
     return (
         <div className='loginPage mt-4 mb-5 pb-5'>
@@ -27,7 +49,7 @@ const Register = ({ setNotFoundPage }) => {
             <div className='d-flex justify-content-center'>
                 <form className='loginForm' onSubmit={handleFormSubmit}>
                     <label className='d-block '>email </label>
-                    <input className='mb-3' type="text" name="email" placeholder='email' required />
+                    <input className='mb-3' type="email" name="email" placeholder='email' required />
                     <label className='d-block'>password </label>
                     <input className='mb-3' type="text" name="password" placeholder='password' required />
                     <br />

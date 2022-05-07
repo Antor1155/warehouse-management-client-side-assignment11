@@ -13,6 +13,7 @@ import Inventory from './pages/Inventory/Inventory';
 import MyItems from './pages/MyItems/MyItems';
 import Login from './pages/LoginRegister/Login/Login';
 import Register from './pages/LoginRegister/Register/Register';
+import Loading from './pages/shared/Loading/Loading';
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
         <Route path="/myitems" element={<MyItems setNotFoundPage={setNotFoundPage}></MyItems>}> </Route>
         <Route path="/login" element={<Login setNotFoundPage={setNotFoundPage}></Login>}> </Route>
         <Route path="/register" element={<Register setNotFoundPage={setNotFoundPage}></Register>}> </Route>
-    
+
+        <Route path='/loading'element={<Loading></Loading>}> </Route>
 
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
       </Routes>
