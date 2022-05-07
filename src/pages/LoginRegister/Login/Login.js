@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-import googleImg from "../../../Images/logos/google.png"
+import googleImg from "../../../Images/logos/google.png";
 
 const Login = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
@@ -28,7 +28,7 @@ const Login = ({ setNotFoundPage }) => {
                     <label className='d-block '>email </label>
                     <input className='mb-2' type="text" name="email" placeholder='email' required />
                     <label className='d-block'>password </label>
-                    <input className type="text" name="password" placeholder='password' required />
+                    <input type="text" name="password" placeholder='password' required />
                     <br />
                     <input className='submitBtn btn mx-auto d-block' type="submit" value='Login' />
                 </form>
