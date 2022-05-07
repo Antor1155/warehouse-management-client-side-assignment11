@@ -10,6 +10,7 @@ import { useState } from 'react';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
 import AddItem from './pages/AddItem/AddItem';
 import Inventory from './pages/Inventory/Inventory';
+import MyItems from './pages/MyItems/MyItems';
 
 function App() {
   
@@ -28,6 +29,7 @@ function App() {
         <Route path="/manageInventory" element={<ManageInventory setNotFoundPage={setNotFoundPage}></ManageInventory>}> </Route>
         <Route path="/additems" element={<AddItem setNotFoundPage={setNotFoundPage}></AddItem>}> </Route>
         <Route path="/inventory/:id" element={<Inventory setNotFoundPage={setNotFoundPage}></Inventory>}> </Route>
+        <Route path="/myitems" element={<MyItems setNotFoundPage={setNotFoundPage}></MyItems>}> </Route>
     
 
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>

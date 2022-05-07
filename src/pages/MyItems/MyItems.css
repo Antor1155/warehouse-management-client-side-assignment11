@@ -1,0 +1,9 @@
+
+.myItems table{
+    border: none;
+    width: 85%;
+    margin-bottom: 9rem;
+}
+.myItems tr{
+    background-color: rgb(228, 220, 220);
+}
