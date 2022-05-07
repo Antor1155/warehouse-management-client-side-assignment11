@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import googleImg from "../../../Images/logos/google.png";
 import auth from '../../../utilities/firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../shared/Loading/Loading';
 
 const Register = ({ setNotFoundPage }) => {
@@ -16,10 +16,10 @@ const Register = ({ setNotFoundPage }) => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-
-    const handleFormSubmit = async(event) => {
+    // register with email and password  
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         const email = event.target.email.value;
@@ -31,16 +31,23 @@ const Register = ({ setNotFoundPage }) => {
         event.target.reset();
 
     }
-    if(loading){
-        return(<Loading></Loading>)
+
+    // registering with google 
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle();
     }
-    if(error){
+
+
+    if (loading || googleLoading) {
+        return (<Loading></Loading>)
+    }
+
+    if (error || googleError) {
         console.log(error);
-        return(<h2> error</h2>);
+        return (<h2 className='text-center text-danger'> error</h2>);
     }
-
-    console.log(user?.user?.email);
-
     return (
         <div className='loginPage mt-4 mb-5 pb-5'>
             <h2 className='text-center my-3'> We welcome <span className='customRed'> you with all </span> our heart</h2>
@@ -53,14 +60,14 @@ const Register = ({ setNotFoundPage }) => {
                     <label className='d-block'>password </label>
                     <input className='mb-3' type="text" name="password" placeholder='password' required />
                     <br />
-                    <input className="form-check-input me-3" type="checkbox"  required/><label className='text-primary'>I accept all terms</label>
+                    <input className="form-check-input me-3" type="checkbox" required /><label className='text-primary'>I accept all terms</label>
 
                     <input className='submitBtn btn  text-black mx-auto d-block mt-4' type="submit" value='Register' />
                 </form>
             </div>
 
             <div className='GoogleBtnDiv'>
-                <p>continue with <button className='border-0'><img src={googleImg} alt="google" /><span className='fs-5 fw-bold'> Google</span></button></p>
+                <p>continue with <button onClick={handleGoogleSignIn} className='border-0'><img src={googleImg} alt="google" /><span className='fs-5 fw-bold'> Google</span></button></p>
             </div>
 
             <p className='text-center'>Already have an account?  <Link className='ps-2' to='/login'>Login </Link></p>
