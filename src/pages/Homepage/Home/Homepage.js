@@ -9,6 +9,7 @@ const Homepage = (props) => {
     if (props.setNotFoundPage){
         props.setNotFoundPage(false);
     }
+
     const [products, setproducts] = useState([]);
     useEffect(() => {
         fetch('fakeData.json')
@@ -17,6 +18,7 @@ const Homepage = (props) => {
             document.body.style = 'background:black;';
     }, [])
 
+    console.log('from homepage js',products)
 
     return (
         <div className='homepage'>

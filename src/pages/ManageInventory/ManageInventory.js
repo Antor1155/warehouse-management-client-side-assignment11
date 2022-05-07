@@ -4,16 +4,17 @@ import "./ManageInventory.css"
 
 const ManageInventory = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
+
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {
-        fetch("fakedata.json")
-            .then(res => res.json())
+        fetch("fakeData.json")
+            .then(res =>res.json())
             .then(data => setAllProducts(data))
         document.body.style = 'background:rgb(240, 238, 238)';
     }, [])
     return (
         <div className='manageInvetory text-center'>
-            <h2 className=' mt-5'> Manage <span className='customRed'>all {allProducts.length}</span> products</h2>
+            <h2 className=' mt-5'> Manage <span className='customRed'>all {allProducts?.length}</span> products</h2>
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>
                     <tr>

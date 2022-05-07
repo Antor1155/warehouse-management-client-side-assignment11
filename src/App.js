@@ -16,7 +16,6 @@ function App() {
 
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
   const [notFoundPage, setNotFoundPage] = useState(false);
-  console.log("from app js page",notFoundPage)
 
   return (
     <div className="App">
