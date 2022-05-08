@@ -15,6 +15,8 @@ import Login from './pages/LoginRegister/Login/Login';
 import Register from './pages/LoginRegister/Register/Register';
 import Loading from './pages/shared/Loading/Loading';
 import RequireAuth from './utilities/RequireAuth';
+// import { ToastContainer } from 'react-toastify';
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <div className="App">
+
       <MyNav></MyNav>
 
       <Routes>
@@ -55,8 +58,7 @@ function App() {
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
       </Routes>
 
-
-
+      {/* <ToastContainer /> */}
       <Footer></Footer>
 
     </div>

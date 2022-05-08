@@ -46,10 +46,10 @@ const Login = ({ setNotFoundPage }) => {
         signInWithGoogle();
     }
 
+
+
     if (googleUser || user) {
-        console.log(from);
         navigate(from, { replace: true });
-        console.log('this line did work');
     }
     if (loading || googleLoading) {
         return (<Loading></Loading>)

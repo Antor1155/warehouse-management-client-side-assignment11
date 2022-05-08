@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleImg from "../../../Images/logos/google.png";
 import auth from '../../../utilities/firebase.init';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../shared/Loading/Loading';
 
 const Register = ({ setNotFoundPage }) => {
@@ -11,6 +11,8 @@ const Register = ({ setNotFoundPage }) => {
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
+    const [sendEmailVerification] = useSendEmailVerification(auth);
 
     useEffect(() => {
         document.body.style = 'background:rgb(240, 238, 238)';
@@ -33,6 +35,9 @@ const Register = ({ setNotFoundPage }) => {
 
         await createUserWithEmailAndPassword(email, password);
 
+        // sending email verification 
+        await sendEmailVerification();
+
         event.target.reset();
 
     }
@@ -45,7 +50,7 @@ const Register = ({ setNotFoundPage }) => {
     }
 
     if(user || googleUser){
-        console.log(from);
+        
         navigate(from, { replace: true });
         console.log('this line did work');
     }
