@@ -38,9 +38,7 @@ const AddItem = ({setNotFoundPage}) => {
         }).then(res => res.json())
         .then(data => setResult(data));
 
-        if(result.acknowledged){
-            notify();
-        }
+        notify();
         event.target.reset();
 
     }

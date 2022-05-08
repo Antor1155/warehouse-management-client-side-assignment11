@@ -29,9 +29,6 @@ const ManageInventory = ({ setNotFoundPage }) => {
                 .then(data => setDeleted(data));
         }
 
-
-
-
     }
 
     return (

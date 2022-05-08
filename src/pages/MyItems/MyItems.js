@@ -1,22 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../utilities/firebase.init';
 import "./MyItems.css"
 
 const MyItems = ({setNotFoundPage}) => {
     setNotFoundPage(false);
 
+    const [deleted, setDeleted] = useState({})
+
+    const [user] =useAuthState(auth);
+    console.log(user?.email);
+
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {
-        fetch("fakeData.json")
+        document.body.style = 'background:rgb(240, 238, 238)';
+
+        fetch(`http://localhost:5000/myItem?email=${user?.email}`)
             .then(res =>res.json())
             .then(data => setAllProducts(data))
-        document.body.style = 'background:rgb(240, 238, 238)';
-    }, [])
+    }, [user, deleted])
 
+    // handling delete items 
+    
+    const handleDelete=(id) =>{
+        const confirm = window.confirm("really want to delete", id);
+        if (confirm) {
+            fetch(`http://localhost:5000/deleteItem/${id}`,{
+                method:'delete'
+            })
+                .then(res => res.json())
+                .then(data => setDeleted(data));
+        }
+    }
 
     return (
         <div className='myItems text-center mt-5'>
             <h2>All <span className='customRed'> {allProducts.length}</span> items added by user</h2>
-            <h4><span className='customRed'>user:</span>  'user name'</h4>
+            <h4><span className='customRed'>user:</span> {user?.email} </h4>
 
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>
@@ -30,14 +50,14 @@ const MyItems = ({setNotFoundPage}) => {
                         <th> </th>
                     </tr>
                     {allProducts.map(product =>
-                        <tr key={product.id}>
+                        <tr key={product._id}>
                             <td> <img src={product.image} alt="product" /></td>
                             <td className='customRed'>{product.name}</td>
                             <td>{product.description}</td>
                             <td>$ {product.price}</td>
                             <td>{product.supplierName}</td>
                             <td>{product.quantity}</td>
-                            <td> <button className='customButton px-3'> Delete</button></td>
+                            <td> <button onClick={()=>handleDelete(product._id)} className='customButton px-3'> Delete</button></td>
                         </tr>)
                     }
                 </tbody>
