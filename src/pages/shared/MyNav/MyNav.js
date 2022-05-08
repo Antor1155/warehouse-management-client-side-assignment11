@@ -21,9 +21,11 @@ const MyNav = () => {
             <div className='navlinks'>
                 <Link to="/home">Home</Link>
                 <Link to="/blogs">Blog</Link>
+                {user? <>
                 <Link to="/manageInventory">Manage Inventory</Link>
                 <Link to="/additems">Add items</Link>
                 <Link to="/myitems">My items</Link>
+                </>:''}
                 {user? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button>:<Link to="/login">Login</Link>}
             </div>
         </div>
