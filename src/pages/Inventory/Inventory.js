@@ -5,16 +5,44 @@ import "./Inventory.css";
 const Inventory = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
     const { id } = useParams();
-    console.log(id);
 
-
+    // getting single item from database 
     const [product, setProduct] = useState([]);
+    const [responseOnUpdate, setResponseOnUpdate] = useState({});
+
     useEffect(() => {
         fetch(`http://localhost:5000/singleItem/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
         document.body.style = 'background:rgb(240, 238, 238)';
-    }, [])
+    }, [, responseOnUpdate])
+
+    // updating the item 
+    const handleDeliver = () => {
+        fetch(`http://localhost:5000/singleItem/${id}`, {
+            method: 'PUT',
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ quantity: productQuantity - 1 })
+        })
+            .then(res => res.json())
+            .then(data => setResponseOnUpdate(data));
+
+    }
+
+
+    // handeling restock form 
+    const handleResockForm =(e) =>{
+        e.preventDefault();
+        const restockNumber = e.target.restockNumber.value;
+        e.target.reset();
+        fetch(`http://localhost:5000/singleItem/${id}`, {
+            method: 'PUT',
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ quantity: productQuantity + parseInt(restockNumber) })
+        })
+            .then(res => res.json())
+            .then(data => setResponseOnUpdate(data));
+    }
 
 
     let productQuantity = product?.quantity;
@@ -36,16 +64,17 @@ const Inventory = ({ setNotFoundPage }) => {
                     </p>
 
                     {productQuantity ?
-                        <button className='customButton bg-success px-3 mt-2 disabled'>Deliver</button> :
+                        <button onClick={handleDeliver} className='customButton bg-success px-3 mt-2 disabled'>Deliver</button> :
                         <p>--- product <span className='customRed'> stock </span> please---</p>
                     }
                 </div>
             </div>
 
+            {/* restock form below  */}
             <div className='restockSection text-center mx-auto my-5 py-5'>
                 <h4 className='mb-4'>product <span className='customRed'>Restock</span> here..</h4>
-                <form >
-                    <input type="number" />
+                <form onSubmit={handleResockForm} >
+                    <input type="number" min="0" name='restockNumber' required/>
                     <input className='btn  btn-success ms-3' type="submit" />
                 </form>
             </div>
