@@ -5,16 +5,17 @@ import "./Inventory.css";
 const Inventory = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
     const { id } = useParams();
+    console.log(id);
 
-    const [allProducts, setAllProducts] = useState([]);
+
+    const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3000/fakeData.json')
+        fetch(`http://localhost:5000/singleItem/${id}`)
             .then(res => res.json())
-            .then(data => setAllProducts(data))
+            .then(data => setProduct(data))
         document.body.style = 'background:rgb(240, 238, 238)';
     }, [])
 
-    let product = allProducts.find(data => data.id === id);
 
     let productQuantity = product?.quantity;
     return (
@@ -27,11 +28,11 @@ const Inventory = ({ setNotFoundPage }) => {
                     <p><strong> Price: </strong> <span className='customRed'>$ </span>{product?.price}</p>
                     <p><strong> Description: </strong> {product?.description}</p>
                     <p><strong> Supplier Name: </strong> {product?.supplierName}</p>
-                    <p><strong> ID: </strong> {product?.id}</p>
+                    <p><strong> ID: </strong> {product?._id}</p>
                     <p><strong> Quantity:</strong> {product?.quantity}</p>
                     <p>
                         <strong>stock: </strong>
-                        <h5 className={`d-inline ${productQuantity ? 'text-success' : 'text-danger'}`}>{productQuantity ? 'available' : 'stock out'}</h5>
+                        <span className={`d-inline fs-4 fw-bold ${productQuantity ? 'text-success' : 'text-danger'}`}>{productQuantity ? 'available' : 'stock out'}</span>
                     </p>
 
                     {productQuantity ?

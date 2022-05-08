@@ -12,10 +12,11 @@ const Homepage = (props) => {
 
     const [products, setproducts] = useState([]);
     useEffect(() => {
-        fetch('fakeData.json')
+        document.body.style = 'background:black;';
+        fetch('http://localhost:5000/home')
             .then(res => res.json())
             .then(data => setproducts(data));
-            document.body.style = 'background:black;';
+        
     }, [])
 
     return (

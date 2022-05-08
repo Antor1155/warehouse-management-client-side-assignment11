@@ -1,10 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "./TinyInventory.css"
+import React, { useEffect } from 'react';
+import { Link} from 'react-router-dom';
+import "./TinyInventory.css";
+
 
 const TinyInventory = (props) => {
     let products = props.products;
     let children = props.children;
+
     return (
         <div className='tinyInventory '>
             <div className='gradientDivFromBlack'> </div>
@@ -22,14 +24,14 @@ const TinyInventory = (props) => {
                         <th> </th>
                     </tr>
                     {products.map(product =>
-                        <tr key={product.id}>
+                        <tr key={product._id}>
                             <td> <img src={product.image} alt="product" /></td>
                             <td className='customRed'>{product.name}</td>
                             <td>{product.description}</td>
                             <td>$ {product.price}</td>
                             <td>{product.supplierName}</td>
                             <td>{product.quantity}</td>
-                            <td><Link to={`/inventory/${product.id}`}> <button className='updateButton px-2'> Update</button></Link></td>
+                            <td><Link to={`/inventory/${product._id}`}> <button className='updateButton px-2'> Update</button></Link></td>
                         </tr>)
                     }
                 </tbody>
