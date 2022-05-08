@@ -13,3 +13,8 @@
     border-radius: 5px;
 
 }
+@media  only screen and (max-width: 500px) {
+    .chart{
+        width: 100%!important;
+    }
+}

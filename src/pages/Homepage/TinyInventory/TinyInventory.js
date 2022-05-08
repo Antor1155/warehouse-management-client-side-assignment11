@@ -5,16 +5,16 @@ import "./TinyInventory.css";
 
 const TinyInventory = (props) => {
     let products = props.products;
-    let children = props.children;
+
 
     return (
         <div className='tinyInventory '>
             <div className='gradientDivFromBlack'> </div>
             <h1 className='sectionStart mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
-            {children ? children : ""}
+
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>
-                    <tr>
+                    <tr className='headerRow '>
                         <th> </th>
                         <th>Name</th>
                         <th>Description</th>
@@ -36,9 +36,9 @@ const TinyInventory = (props) => {
                     }
                 </tbody>
             </table>
-            <div className='text-center '>
+            <div className='text-center mt-5'>
                 <Link to="/manageInventory">
-                    <button className='manageInventoryBtn mt-4  py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
+                    <button className='manageInventoryBtn py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
                 </Link>
             </div>
         </div>

@@ -36,7 +36,7 @@ const ManageInventory = ({ setNotFoundPage }) => {
             <h2 className=' mt-5'> Manage <span className='customRed'>all {allProducts?.length}</span> products</h2>
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>
-                    <tr>
+                    <tr className='headerRow'>
                         <th> </th>
                         <th>Name</th>
                         <th>Description</th>

@@ -8,7 +8,7 @@ const Management = () => {
     return (
         <div className='management mx-auto'>
             <h1 className='text-center mb-5 pb-4'>Management</h1>
-            <div className='mb-5 d-flex flex-row-reverse justify-content-around align-items-center'>
+            <div className='flexedManagement mb-5 d-md-flex flex-row-reverse justify-content-around align-items-center'>
                 <img src={wroker1} alt="" />
                 <div>
                     <h3 className='customRed'>James Robert</h3>
@@ -18,7 +18,7 @@ const Management = () => {
                 </div>
 
             </div>
-            <div className='d-flex justify-content-around align-items-center'>
+            <div className='flexedManagement specialChild d-md-flex justify-content-around align-items-center'>
                 <img src={wroker2} alt="" />
                 <div>
                     <h3 className='customRed'>Jennifer Cherri</h3>

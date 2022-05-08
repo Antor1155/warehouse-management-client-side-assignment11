@@ -46,7 +46,6 @@ const Login = ({ setNotFoundPage }) => {
     }
 
 
-
     if (googleUser || user) {
         navigate(from, { replace: true });
     }

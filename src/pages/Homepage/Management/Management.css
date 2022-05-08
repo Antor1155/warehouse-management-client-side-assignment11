@@ -12,3 +12,13 @@
 blockquote{
     font-style: italic;
 }
+@media screen and (max-width:500px) {
+    .management img{
+        box-shadow: 35px -30px 15px rgb(96, 215, 146);
+        margin-bottom: 55px;
+    }
+    .specialChild{
+        padding-top: 5rem;
+        margin-bottom: 5rem;
+    }
+}

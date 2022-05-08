@@ -13,13 +13,12 @@
     margin-top: 4rem;
 }
 .tinyIntevtoryTable{
-    border: 2px solid black;
     margin: auto;
     margin-top: 30px;
     height: 500px;
-    width: 70%;
-    overflow: hidden;
-    border-radius: 10px;
+    width: 85%;
+    padding: 2rem ;
+    border-radius: 2rem;
 }
 .tinyIntevtoryTable img{
     width: 55px;
@@ -31,8 +30,8 @@ tr{
     text-align: center;
 }
 th, td{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .updateButton{
     border: none;
@@ -54,4 +53,20 @@ th, td{
 .manageInventoryBtn:hover{
     background-color: rgb(44, 111, 126);
     color: white;
+}
+
+@media (max-width:500px) {
+    .tinyIntevtoryTable tr{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 2rem 0;
+        margin-bottom: 2rem;
+    }
+    .tinyIntevtoryTable .headerRow{
+        display: none;
+    }
+    .tinyIntevtoryTable{
+        width: 90%;
+    }
+
 }
