@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import toast, { Toaster } from 'react-hot-toast';
+import auth from '../../utilities/firebase.init';
 import './AddItem.css'
 
 const AddItem = ({setNotFoundPage}) => {
@@ -6,11 +9,39 @@ const AddItem = ({setNotFoundPage}) => {
     useEffect(()=>{
         document.body.style = 'background:rgb(240, 238, 238)';
     },[])
-    const handleSubmit=(event)=>{
+
+    const [result, setResult] = useState([]);
+    const [user] = useAuthState(auth);
+
+    // handling toast 
+    const notify = () => toast.success('Successfully created!');
+
+
+    // handling adding new user 
+    const handleSubmit= (event)=>{
         event.preventDefault();
-        event.target.reset();
+
+        const product = {
+            addedBy: user.email,
+            image: event.target.image.value,
+            name: event.target.name.value,
+            price: parseInt(event.target.price.value),
+            description: event.target.description.value,
+            supplierName: event.target.supplierName.value,
+            quantity: parseInt(event.target.quantity.value)
+        }
         
-        window.alert( "working");
+        fetch('http://localhost:5000/addItem',{
+            method: 'POST',
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(product)
+        }).then(res => res.json())
+        .then(data => setResult(data));
+
+        if(result.acknowledged){
+            notify();
+        }
+        event.target.reset();
 
     }
         return (
@@ -18,14 +49,15 @@ const AddItem = ({setNotFoundPage}) => {
             <h2 className='my-3'>please add <span className='customRed'>Items Of</span>  your choice</h2>
            <form onSubmit={handleSubmit}>
                <input type="text" placeholder='ImageUrl' name='image' required/>
-               <input type="text" placeholder='product name' name='name'/>
-               <input type="number" placeholder='price' name='price'/>
+               <input type="text" placeholder='product name' name='name' required/>
+               <input type="number" placeholder='price' min='0' name='price' required/>
                {/* <input type="text-area" placeholder='short description' name='description'/> */}
-               <textarea placeholder='short description' name='description'></textarea>
-               <input type="text" placeholder='supplierName' name='supplierName'/>
-               <input type="number" placeholder='quantity' name='quantity'/>
+               <textarea placeholder='short description' name='description' required></textarea>
+               <input type="text" placeholder='supplierName' name='supplierName' required/>
+               <input type="number" placeholder='quantity' min='1' name='quantity' required/>
                <input className='submitBtn px-3' type="submit" style={{width:"12rem"}}/>
            </form>
+           <Toaster></Toaster>
         </div>
     );
 };
