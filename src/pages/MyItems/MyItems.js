@@ -9,7 +9,6 @@ const MyItems = ({setNotFoundPage}) => {
     const [deleted, setDeleted] = useState({})
 
     const [user] =useAuthState(auth);
-    console.log(user?.email);
 
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {

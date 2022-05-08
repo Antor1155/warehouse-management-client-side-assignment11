@@ -25,14 +25,12 @@ const RequireAuth = ({ children}) => {
     }
 
     // sending email verification 
-    async function handleSendingEmailVerification (){
-        
+    async function handleSendingEmailVerification (){    
         await sendEmailVerification();
         notify();
     }
 
     if(user){
-        console.log(user.emailVerified);
         if(!user.emailVerified){
             return (<div className='emailVerification my-5 text-center p'>
                     <Toaster></Toaster>
