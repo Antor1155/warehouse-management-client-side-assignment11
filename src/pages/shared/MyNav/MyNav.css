@@ -37,7 +37,7 @@
 }
 
 @media only screen and (max-width:600px) {
-    .navlinks{
+    .navlinks, .passwordResetButton{
         display: none;
     }
     .dropdown{
@@ -47,12 +47,16 @@
         background-color: rgb(20, 9, 9)!important;
         width: 100vw;
         text-align: center!important;
+        margin-top: 1rem!important;
+        padding: 1rem 1rem 2rem 1rem !important;
     }
     .myNav a{
-        display: inline-block;
+        display:block;
         padding-right: 0;
+        padding-left: 0;
     }
-    .passwordResetButton{
-        display: none;
+    .myNav{
+        justify-content: space-around;
+        padding-right: 0;
     }
 }
