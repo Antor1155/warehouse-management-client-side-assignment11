@@ -1,6 +1,6 @@
  // applying for jwt token and storing
  export default async function getJwt(email) {
-    await fetch('http://localhost:5000/login', {
+    await fetch('https://floating-savannah-75899.herokuapp.com/login', {
         method: 'POST',
         headers: { "content-type": "application/json" },
         body: JSON.stringify({email})

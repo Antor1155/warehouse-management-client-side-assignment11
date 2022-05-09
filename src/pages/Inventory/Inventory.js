@@ -12,7 +12,7 @@ const Inventory = ({ setNotFoundPage }) => {
     const [responseOnUpdate, setResponseOnUpdate] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleItem/${id}`)
+        fetch(`https://floating-savannah-75899.herokuapp.com/singleItem/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
         document.body.style = 'background:rgb(240, 238, 238)';
@@ -20,7 +20,7 @@ const Inventory = ({ setNotFoundPage }) => {
 
     // updating the item 
     const handleDeliver = () => {
-        fetch(`http://localhost:5000/singleItem/${id}`, {
+        fetch(`https://floating-savannah-75899.herokuapp.com/singleItem/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ quantity: productQuantity - 1 })
@@ -36,7 +36,7 @@ const Inventory = ({ setNotFoundPage }) => {
         e.preventDefault();
         const restockNumber = e.target.restockNumber.value;
         e.target.reset();
-        fetch(`http://localhost:5000/singleItem/${id}`, {
+        fetch(`https://floating-savannah-75899.herokuapp.com/singleItem/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ quantity: productQuantity + parseInt(restockNumber) })

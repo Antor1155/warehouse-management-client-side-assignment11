@@ -22,7 +22,7 @@ const MyItems = ({ setNotFoundPage }) => {
     useEffect(() => {
         document.body.style = 'background:rgb(240, 238, 238)';
         try {
-            fetch(`http://localhost:5000/myItem?email=${user?.email}`, {
+            fetch(`https://floating-savannah-75899.herokuapp.com/myItem?email=${user?.email}`, {
                 headers: {
                     authorization: `Bearer ${window.localStorage.getItem('accessToken')}`
                 }
@@ -48,7 +48,7 @@ const MyItems = ({ setNotFoundPage }) => {
     const handleDelete = (id) => {
         const confirm = window.confirm("really want to delete", id);
         if (confirm) {
-            fetch(`http://localhost:5000/deleteItem/${id}`, {
+            fetch(`https://floating-savannah-75899.herokuapp.com/deleteItem/${id}`, {
                 method: 'delete'
             })
                 .then(res => res.json())

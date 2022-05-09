@@ -31,7 +31,7 @@ const AddItem = ({setNotFoundPage}) => {
             quantity: parseInt(event.target.quantity.value)
         }
         
-        fetch('http://localhost:5000/addItem',{
+        fetch('https://floating-savannah-75899.herokuapp.com/addItem',{
             method: 'POST',
             headers: {"content-type": "application/json"},
             body: JSON.stringify(product)
