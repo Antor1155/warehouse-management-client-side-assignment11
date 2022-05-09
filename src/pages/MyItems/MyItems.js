@@ -35,7 +35,6 @@ const MyItems = ({ setNotFoundPage }) => {
                 })
         }
         catch (error) {
-            console.log('from catch error', error);
             if (error.response.status === 401 || error.response.status === 403) {
                 signOut(auth);
                 navigate('/login');

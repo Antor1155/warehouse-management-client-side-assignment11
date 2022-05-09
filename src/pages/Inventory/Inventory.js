@@ -47,7 +47,6 @@ const Inventory = ({ setNotFoundPage }) => {
 
     let productQuantity = product?.quantity;
 
-    console.log(product);
     if(!product.name){
         return(<Loading></Loading>)
     }

@@ -31,7 +31,6 @@ const Register = ({ setNotFoundPage }) => {
 
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(email, password);
 
         await createUserWithEmailAndPassword(email, password);
 
@@ -52,7 +51,6 @@ const Register = ({ setNotFoundPage }) => {
     if(user || googleUser){
         
         navigate(from, { replace: true });
-        console.log('this line did work');
     }
     if (loading || googleLoading) {
         return (<Loading></Loading>)

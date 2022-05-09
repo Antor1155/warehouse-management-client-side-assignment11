@@ -6,8 +6,7 @@
         body: JSON.stringify({email})
 
     }).then(res => res.json())
-        .then(jwt =>{
-        console.log('jwt from getjwt',jwt);      
+        .then(jwt =>{     
         window.localStorage.setItem('accessToken', jwt.accessToken);
     });
 }
