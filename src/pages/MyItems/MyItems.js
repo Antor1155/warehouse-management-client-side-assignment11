@@ -39,7 +39,7 @@ const MyItems = ({setNotFoundPage}) => {
 
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>
-                    <tr>
+                    <tr className='headerRow'>
                         <th> </th>
                         <th>Name</th>
                         <th>Description</th>

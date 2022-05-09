@@ -1,49 +1,68 @@
-.testing{
+.testing {
     border: 2px solid blue;
 }
+
+.customRed {
+    color: rgb(196, 28, 28);
+}
+
 /* this porting is for testing purpose */
 
-.bannerImg{
+
+.bannerImg {
     filter: brightness(50%);
     height: 80vh;
 }
+.logo {
+    width: 170px;
+    padding: 0;
+}
+.logoname {
+    font-size: 4rem;
+    margin-bottom: 0px;
+    padding-top: 0;
+    margin-top: 0;
+}
 
-.bannerContent{
+.bannerContent {
     color: white;
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.logo{
-    width: 170px;
-    padding: 0;
-}
-.logoname{
-    font-size: 4rem;
-    margin-bottom: 0px;
-    padding-top: 0 ;
-    margin-top: 0;
-}
-.customRed{
-    color: rgb(196, 28, 28);
-}
-.felxbox{
+
+
+.felxbox {
     width: 40%;
+    margin-bottom: 2rem;
 }
-.customButton{
+
+.customButton {
     background-color: rgb(196, 28, 28);
     color: white;
     border-radius: 17px;
     border: none;
 }
-.customButton:hover{
-    background-color:rgb(236, 149, 149);
+
+.customButton:hover {
+    background-color: rgb(236, 149, 149);
     color: black;
 }
 
-@media  only screen and (max-width:600px) {
-    .bannerContent{
-    display: block;
+
+@media only screen and (max-width:600px) {
+    .bannerContent {
+        display: block;
+        height: 100%;
+        background-image: none !important;
+    }
+    .BannerTextDiv{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .felxbox {
+        width: 80%;
     }
 }
