@@ -54,7 +54,6 @@ function App() {
         <Route path="*" element={<NotFound setNotFoundPage={setNotFoundPage}></NotFound>}></Route>
       </Routes>
 
-      {/* <ToastContainer /> */}
       <Footer></Footer>
 
     </div>

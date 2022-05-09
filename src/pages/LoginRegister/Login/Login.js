@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import googleImg from "../../../Images/logos/google.png";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../utilities/firebase.init';
 import Loading from '../../shared/Loading/Loading';
+import getJwt from '../../../utilities/getJwt';
 
 const Login = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
@@ -12,7 +13,6 @@ const Login = ({ setNotFoundPage }) => {
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-
 
     useEffect(() => {
         document.body.style = 'background:rgb(240, 238, 238)';
@@ -28,12 +28,9 @@ const Login = ({ setNotFoundPage }) => {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-
         const email = event.target.email.value;
         const password = event.target.password.value;
-
         signInWithEmailAndPassword(email, password);
-
         event.target.reset();
 
     }
@@ -45,10 +42,15 @@ const Login = ({ setNotFoundPage }) => {
         signInWithGoogle();
     }
 
-
     if (googleUser || user) {
+        const commonUser = googleUser || user;
+        ///
+        console.log('common  user is :', commonUser);
+        getJwt(commonUser.user.email);
+
         navigate(from, { replace: true });
     }
+
     if (loading || googleLoading) {
         return (<Loading></Loading>)
     }

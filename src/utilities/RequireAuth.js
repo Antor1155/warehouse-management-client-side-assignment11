@@ -5,6 +5,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 // import { toast, ToastContainer } from 'react-toastify';
 import Loading from '../pages/shared/Loading/Loading';
 import auth from './firebase.init';
+import getJwt from './getJwt';
 
 const RequireAuth = ({ children}) => {
     let location = useLocation();
@@ -41,6 +42,14 @@ const RequireAuth = ({ children}) => {
                     
             </div>)
         }
+
+    }
+
+    
+
+    let token = window.localStorage.getItem("accessToken");
+    if(!token){
+        getJwt(user.email);
     }
 
     return children;
