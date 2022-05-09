@@ -44,8 +44,6 @@ const Login = ({ setNotFoundPage }) => {
 
     if (googleUser || user) {
         const commonUser = googleUser || user;
-        ///
-        console.log('common  user is :', commonUser);
         getJwt(commonUser.user.email);
 
         navigate(from, { replace: true });

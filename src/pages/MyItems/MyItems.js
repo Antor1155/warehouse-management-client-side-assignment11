@@ -1,31 +1,56 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../utilities/firebase.init';
 import "./MyItems.css"
 
-const MyItems = ({setNotFoundPage}) => {
+const MyItems = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
+    const navigate = useNavigate();
 
     const [deleted, setDeleted] = useState({})
+    const [user] = useAuthState(auth);
 
-    const [user] =useAuthState(auth);
+    // setting fetch reply 
 
+
+
+    // getting all the products 
     const [allProducts, setAllProducts] = useState([]);
+
     useEffect(() => {
         document.body.style = 'background:rgb(240, 238, 238)';
+        try {
+            fetch(`http://localhost:5000/myItem?email=${user?.email}`, {
+                headers: {
+                    authorization: `Bearer ${window.localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.message) {
+                        setAllProducts(data);
+                    }
+                })
+        }
+        catch (error) {
+            console.log('from catch error', error);
+            if (error.response.status === 401 || error.response.status === 403) {
+                signOut(auth);
+                navigate('/login');
+            }
+        }
 
-        fetch(`http://localhost:5000/myItem?email=${user?.email}`)
-            .then(res =>res.json())
-            .then(data => setAllProducts(data))
-    }, [user, deleted])
+    }, [ ,user, deleted])
 
     // handling delete items 
-    
-    const handleDelete=(id) =>{
+
+    const handleDelete = (id) => {
         const confirm = window.confirm("really want to delete", id);
         if (confirm) {
-            fetch(`http://localhost:5000/deleteItem/${id}`,{
-                method:'delete'
+            fetch(`http://localhost:5000/deleteItem/${id}`, {
+                method: 'delete'
             })
                 .then(res => res.json())
                 .then(data => setDeleted(data));
@@ -56,7 +81,7 @@ const MyItems = ({setNotFoundPage}) => {
                             <td>$ {product.price}</td>
                             <td>{product.supplierName}</td>
                             <td>{product.quantity}</td>
-                            <td> <button onClick={()=>handleDelete(product._id)} className='customButton px-3'> Delete</button></td>
+                            <td> <button onClick={() => handleDelete(product._id)} className='customButton px-3'> Delete</button></td>
                         </tr>)
                     }
                 </tbody>
