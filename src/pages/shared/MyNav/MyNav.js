@@ -13,14 +13,14 @@ const MyNav = () => {
         signOut(auth);
     }
 
-     // setting for password reset 
-     const notify = () => toast.success("password reset mail send");
-     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-     function handlePasswordReset() {
-         sendPasswordResetEmail(user.email);
-         notify();
-     }
- 
+    // setting for password reset 
+    const notify = () => toast.success("password reset mail send");
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+    function handlePasswordReset() {
+        sendPasswordResetEmail(user.email);
+        notify();
+    }
+
     return (
         <div className='myNav mx-auto'>
             <div>
@@ -40,10 +40,36 @@ const MyNav = () => {
                 {user ? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button> : <Link to="/login">Login</Link>}
             </div>
 
-            {user? <button onClick={handlePasswordReset} className='passwordResetButton'> reset password</button>:''}
+            {user ? <button onClick={handlePasswordReset} className='passwordResetButton'> reset password</button> : ''}
             <Toaster></Toaster>
 
-           
+
+            {/* for responsive and smaller display */}
+            <Dropdown className='dropdown'>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Pages
+                </Dropdown.Toggle>
+                <Dropdown.Menu className='dorpdownMenu'>
+
+                    <Link to="/home">Home</Link>
+                    <Link to="/blogs">Blog</Link>
+
+                    {user ? <>
+                        <Link to="/manageInventory">Manage Inventory</Link>
+                        <Link to="/additems">Add items</Link>
+                        <Link to="/myitems">My items</Link>
+                    </> : ''}
+                    {user ? <div className='d-flex justify-content-around'>
+                        <button className='btn btn-warning mt-3' onClick={HandleSignOut}>SignOut</button>
+                        <button onClick={handlePasswordReset} className='btn btn-danger mt-3'> reset password</button>
+                    </div> : <Link to="/login">Login</Link>}
+
+
+
+
+
+                </Dropdown.Menu>
+            </Dropdown>
 
         </div>
     );

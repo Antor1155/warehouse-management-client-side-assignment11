@@ -26,3 +26,33 @@
     border: none;
     margin-left: 1rem;
 }
+
+.dropdown{
+    display: none;
+}
+
+
+.dorpdownMenu a{
+    display: inline;
+}
+
+@media only screen and (max-width:600px) {
+    .navlinks{
+        display: none;
+    }
+    .dropdown{
+        display: block;      
+    }
+    .dorpdownMenu{
+        background-color: rgb(20, 9, 9)!important;
+        width: 100vw;
+        text-align: center!important;
+    }
+    .myNav a{
+        display: inline-block;
+        padding-right: 0;
+    }
+    .passwordResetButton{
+        display: none;
+    }
+}
