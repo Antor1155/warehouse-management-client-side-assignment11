@@ -7,6 +7,7 @@
     filter: brightness(50%);
     height: 80vh;
 }
+
 .bannerContent{
     color: white;
     height: 90vh;
@@ -39,4 +40,10 @@
 .customButton:hover{
     background-color:rgb(236, 149, 149);
     color: black;
+}
+
+@media  only screen and (max-width:600px) {
+    .bannerContent{
+    display: block;
+    }
 }

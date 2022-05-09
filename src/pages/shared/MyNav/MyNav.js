@@ -40,7 +40,6 @@ const MyNav = () => {
                 {user ? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button> : <Link to="/login">Login</Link>}
             </div>
 
-            {user ? <button onClick={handlePasswordReset} className='passwordResetButton'> reset password</button> : ''}
             <Toaster></Toaster>
 
 

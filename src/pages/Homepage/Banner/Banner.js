@@ -21,7 +21,7 @@ const Banner = () => {
                 </div>
 
 
-                <div className='d-flex justify-content-around'>
+                <div className='d-md-flex justify-content-around'>
                     <div className='   felxbox'>
                         <h2 className=' '>Our support section</h2>
                         <p>If you face any difficulty or need help, happy to be contacted. We have a 24 hour support session.

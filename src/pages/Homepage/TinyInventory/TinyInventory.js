@@ -6,7 +6,6 @@ import "./TinyInventory.css";
 const TinyInventory = (props) => {
     let products = props.products;
 
-
     return (
         <div className='tinyInventory '>
             <div className='gradientDivFromBlack'> </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Loading from '../shared/Loading/Loading';
 import "./Inventory.css";
 
 const Inventory = ({ setNotFoundPage }) => {
@@ -7,7 +8,7 @@ const Inventory = ({ setNotFoundPage }) => {
     const { id } = useParams();
 
     // getting single item from database 
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const [responseOnUpdate, setResponseOnUpdate] = useState({});
 
     useEffect(() => {
@@ -44,8 +45,12 @@ const Inventory = ({ setNotFoundPage }) => {
             .then(data => setResponseOnUpdate(data));
     }
 
-
     let productQuantity = product?.quantity;
+
+    console.log(product);
+    if(!product.name){
+        return(<Loading></Loading>)
+    }
     return (
         <div className='container inventory'>
             <h2 className='text-center'>--Update and manage the product--</h2>

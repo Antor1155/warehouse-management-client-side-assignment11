@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../shared/Loading/Loading';
 import "./ManageInventory.css"
 
 const ManageInventory = ({ setNotFoundPage }) => {
@@ -29,6 +30,9 @@ const ManageInventory = ({ setNotFoundPage }) => {
                 .then(data => setDeleted(data));
         }
 
+    }
+    if(!allProducts.length){
+        return(<Loading></Loading>)
     }
 
     return (
