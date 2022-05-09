@@ -16,9 +16,6 @@ import Register from './pages/LoginRegister/Register/Register';
 import Loading from './pages/shared/Loading/Loading';
 import RequireAuth from './utilities/RequireAuth';
 
-import { Toaster } from 'react-hot-toast';
-
-
 function App() {
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
   const [notFoundPage, setNotFoundPage] = useState(false);
