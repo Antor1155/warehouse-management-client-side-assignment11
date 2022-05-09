@@ -1,7 +1,8 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import auth from '../../../utilities/firebase.init';
 import "./MyNav.css";
@@ -11,6 +12,15 @@ const MyNav = () => {
     const HandleSignOut = () => {
         signOut(auth);
     }
+
+     // setting for password reset 
+     const notify = () => toast.success("password reset mail send");
+     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+     function handlePasswordReset() {
+         sendPasswordResetEmail(user.email);
+         notify();
+     }
+ 
     return (
         <div className='myNav mx-auto'>
             <div>
@@ -30,6 +40,8 @@ const MyNav = () => {
                 {user ? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button> : <Link to="/login">Login</Link>}
             </div>
 
+            {user? <button onClick={handlePasswordReset} className='passwordResetButton'> reset password</button>:''}
+            <Toaster></Toaster>
 
            
 
