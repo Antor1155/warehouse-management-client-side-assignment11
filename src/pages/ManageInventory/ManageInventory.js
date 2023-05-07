@@ -11,7 +11,7 @@ const ManageInventory = ({ setNotFoundPage }) => {
 
     // getting all product to manage 
     useEffect(() => {
-        fetch("https://floating-savannah-75899.herokuapp.com/manageAll")
+        fetch("https://calm-erin-dibbler-cap.cyclic.app/manageAll")
             .then(res => res.json())
             .then(data => setAllProducts(data))
         document.body.style = 'background:rgb(240, 238, 238)';
@@ -23,7 +23,7 @@ const ManageInventory = ({ setNotFoundPage }) => {
 
         const confirm = window.confirm("really want to delete", id);
         if (confirm) {
-            fetch(`https://floating-savannah-75899.herokuapp.com/deleteItem/${id}`,{
+            fetch(`https://calm-erin-dibbler-cap.cyclic.app/deleteItem/${id}`,{
                 method:'delete'
             })
                 .then(res => res.json())

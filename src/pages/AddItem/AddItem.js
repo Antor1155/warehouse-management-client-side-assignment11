@@ -31,7 +31,7 @@ const AddItem = ({setNotFoundPage}) => {
             quantity: parseInt(event.target.quantity.value)
         }
         
-        fetch('https://floating-savannah-75899.herokuapp.com/addItem',{
+        fetch('https://calm-erin-dibbler-cap.cyclic.app/addItem',{
             method: 'POST',
             headers: {"content-type": "application/json"},
             body: JSON.stringify(product)

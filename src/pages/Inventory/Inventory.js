@@ -12,7 +12,7 @@ const Inventory = ({ setNotFoundPage }) => {
     const [responseOnUpdate, setResponseOnUpdate] = useState({});
 
     useEffect(() => {
-        fetch(`https://floating-savannah-75899.herokuapp.com/singleItem/${id}`)
+        fetch(`https://calm-erin-dibbler-cap.cyclic.app/singleItem/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
         document.body.style = 'background:rgb(240, 238, 238)';
@@ -20,7 +20,7 @@ const Inventory = ({ setNotFoundPage }) => {
 
     // updating the item 
     const handleDeliver = () => {
-        fetch(`https://floating-savannah-75899.herokuapp.com/singleItem/${id}`, {
+        fetch(`https://calm-erin-dibbler-cap.cyclic.app/singleItem/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ quantity: productQuantity - 1 })
@@ -36,7 +36,7 @@ const Inventory = ({ setNotFoundPage }) => {
         e.preventDefault();
         const restockNumber = e.target.restockNumber.value;
         e.target.reset();
-        fetch(`https://floating-savannah-75899.herokuapp.com/singleItem/${id}`, {
+        fetch(`https://calm-erin-dibbler-cap.cyclic.app/singleItem/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ quantity: productQuantity + parseInt(restockNumber) })
