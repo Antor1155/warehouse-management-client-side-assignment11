@@ -1,24 +1,26 @@
 .tinyInventory{
-   background-color: rgb(240, 238, 238);
+   background-color: rgb(106 140 112);
 }
 .gradientDivFromBlack{
-    background-image: linear-gradient(black 40%, rgb(240, 238, 238));
+    background-image: linear-gradient(black 40%, rgb(106 140 112));
     height: 50px;
 }
 .gradientDivFromWhite{
-    background-image: linear-gradient(rgb(240, 238, 238) 40%, black);
+    background-image: linear-gradient(rgb(106 140 112) 40%, black);
     height: 50px;
 }
 .sectionStart{
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 .tinyIntevtoryTable{
     margin: auto;
     margin-top: 30px;
-    height: 500px;
+    /* height: 500px; */
+    overflow: hidden;
     width: 85%;
     padding: 2rem ;
     border-radius: 2rem;
+    
 }
 .tinyIntevtoryTable img{
     width: 55px;
@@ -26,7 +28,7 @@
     border-radius: 50%;
 }
 tr{  
-    background-color: rgba(160, 240, 226, 0.53);
+    background-color: rgb(176 169 109);
     text-align: center;
 }
 th, td{

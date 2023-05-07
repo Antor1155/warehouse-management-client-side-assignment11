@@ -7,7 +7,7 @@ import './AddItem.css'
 const AddItem = ({setNotFoundPage}) => {
     setNotFoundPage(false);
     useEffect(()=>{
-        document.body.style = 'background:rgb(240, 238, 238)';
+        document.body.style = 'background:rgb(106 140 112)';
     },[])
 
     const [result, setResult] = useState([]);
@@ -53,7 +53,7 @@ const AddItem = ({setNotFoundPage}) => {
                <textarea placeholder='short description' name='description' required></textarea>
                <input type="text" placeholder='supplierName' name='supplierName' required/>
                <input type="number" placeholder='quantity' min='1' name='quantity' required/>
-               <input className='submitBtn px-3' type="submit" style={{width:"12rem"}}/>
+               <input className='submitBtn bg-info px-3 my-3' type="submit" style={{width:"12rem"}}/>
            </form>
            <Toaster></Toaster>
         </div>

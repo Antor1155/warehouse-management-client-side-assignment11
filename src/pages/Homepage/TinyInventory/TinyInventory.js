@@ -11,7 +11,7 @@ const TinyInventory = (props) => {
             <div className='gradientDivFromBlack'> </div>
             <h1 className='sectionStart mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
 
-            <table className='tinyIntevtoryTable mt-5'>
+            <table className='tinyIntevtoryTable'>
                 <tbody>
                     <tr className='headerRow '>
                         <th> </th>
@@ -35,7 +35,7 @@ const TinyInventory = (props) => {
                     }
                 </tbody>
             </table>
-            <div className='text-center mt-5'>
+            <div className='text-center mt-4'>
                 <Link to="/manageInventory">
                     <button className='manageInventoryBtn py-2  px-2 mx-auto'><strong> Manage Inventory</strong></button>
                 </Link>

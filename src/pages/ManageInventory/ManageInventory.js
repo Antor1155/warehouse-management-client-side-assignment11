@@ -14,7 +14,7 @@ const ManageInventory = ({ setNotFoundPage }) => {
         fetch("https://calm-erin-dibbler-cap.cyclic.app/manageAll")
             .then(res => res.json())
             .then(data => setAllProducts(data))
-        document.body.style = 'background:rgb(240, 238, 238)';
+        document.body.style = 'background:rgb(106 140 112)';
     }, [, deleted])
 
 
@@ -37,7 +37,7 @@ const ManageInventory = ({ setNotFoundPage }) => {
 
     return (
         <div className='manageInvetory text-center'>
-            <h2 className=' mt-5'> Manage <span className='customRed'>all {allProducts?.length}</span> products</h2>
+            <h2 className=' mt-4'> Manage <span className='customRed'>all {allProducts?.length}</span> products</h2>
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>
                     <tr className='headerRow'>
@@ -63,7 +63,7 @@ const ManageInventory = ({ setNotFoundPage }) => {
                 </tbody>
             </table>
             <Link to="/additems">
-                <button className='btn btn-primary px-5 my-5'>Add Items</button>
+                <button className='btn btn-info px-5 my-5'>Add Items</button>
             </Link>
             {/* <div className='gradientDivFromWhite'></div> */}
         </div>

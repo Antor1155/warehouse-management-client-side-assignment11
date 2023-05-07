@@ -24,14 +24,14 @@ const Banner = () => {
                         <h2 className=' '>Our support section</h2>
                         <p>If you face any difficulty or need help, happy to be contacted. We have a 24 hour support session.
                         </p>
-                        <a target="_blank" rel="noreferrer" href="https://www.facebook.com/md.antor.16
+                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/md-antor/
                      "><button className='customButton px-4 py-2'> visit support</button></a>
 
                     </div>
                     <div className='felxbox'>
                         <h2 className=' '>Our sourcing sides</h2>
                         <p>Business over 20 years and around 50 countries. With good experiences comes good sources.</p>
-                        <a target="_blank" rel="noreferrer" href="https://www.facebook.com/md.antor.16
+                        <a target="_blank" rel="noreferrer" href="https://github.com/Antor1155/warehouse-management-client-side-assignment11
                      "><button className='customButton px-4 py-2'> visit sources</button></a>
                     </div>
 

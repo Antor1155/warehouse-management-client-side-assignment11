@@ -17,6 +17,9 @@
     color: white;
     padding-left: 2rem;
 }
+.myNav a:hover{
+    color: aquamarine;
+}
 .myNav h3, .navlinks{
     display: inline;
 }
@@ -25,6 +28,13 @@
     color: rgb(241, 129, 129);
     border: none;
     margin-left: 1rem;
+}
+a.loginBtnNav{
+    color: rgb(65, 244, 65);
+}
+
+a.inactiveLink{
+    color: rgb(167, 152, 152);
 }
 
 .dropdown{

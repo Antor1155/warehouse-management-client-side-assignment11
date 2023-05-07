@@ -7,7 +7,7 @@ const Graphs = ({ products }) => {
     return (
         <div className='graphs'>
             <h1>Total <span className='customRed'>sotred</span> Amount</h1>
-            <p>visualization of <strong className='customRed'>{products.length}</strong> types of producs' availability</p>
+            <p>visualization of <strong className='customRed'>{products.length}</strong> types of producs: available</p>
             <ResponsiveContainer className='chart my-4' width="70%" height={450}>
                 <BarChart
                     width={1000}
@@ -25,12 +25,12 @@ const Graphs = ({ products }) => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="quantity" fill="#8884d8" />
-                    <Bar dataKey="price" fill="#82ca9d" />
+                    <Bar dataKey="quantity" fill="#6661c9" />
+                    <Bar dataKey="price" fill="#3b5c80" />
                 </BarChart>
               </ResponsiveContainer>
             
-            <p className='mb-5'>For more info please visit <span className='text-primary'><strong className='pageLink'><Link to="/home">Manage Inventory page</Link> </strong></span> Manage Inventory page</p>
+            <p className='mb-3'>For more info please visit <span className='text-primary'><strong className='pageLink'><Link to="/manageInventory">Manage Inventory page</Link> </strong></span> Manage Inventory page</p>
             <div className='gradientDivFromWhite'></div>
         </div>
     );

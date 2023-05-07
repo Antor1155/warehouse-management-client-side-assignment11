@@ -31,13 +31,13 @@ const MyNav = () => {
 
             <div className='navlinks'>
                 <Link to="/home">Home</Link>
+
+                <Link className={!user ? "inactiveLink": ""} to="/manageInventory">Manage Inventory</Link>
+                <Link className={!user ? "inactiveLink": ""} to="/additems">Add items</Link>
+                <Link className={!user ? "inactiveLink": ""} to="/myitems">My items</Link>
+
                 <Link to="/blogs">Blog</Link>
-                {user ? <>
-                    <Link to="/manageInventory">Manage Inventory</Link>
-                    <Link to="/additems">Add items</Link>
-                    <Link to="/myitems">My items</Link>
-                </> : ''}
-                {user ? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button> : <Link to="/login">Login</Link>}
+                {user ? <button className='signOutBtn' onClick={HandleSignOut}>SignOut</button> : <Link to="/login" className='loginBtnNav'>Login</Link>}
             </div>
 
             <Toaster></Toaster>

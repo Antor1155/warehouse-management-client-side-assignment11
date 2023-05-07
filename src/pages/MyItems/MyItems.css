@@ -3,7 +3,12 @@
     border: none;
     width: 85%;
     margin-bottom: 9rem;
+    padding-top: 10px;
 }
-.myItems tr{
+.myItems table tr{
+    border-bottom:2px solid rgba(117, 74, 74, 0.346) ;
+
+}
+/* .myItems tr{
     background-color: rgb(228, 220, 220);
-}
+} */

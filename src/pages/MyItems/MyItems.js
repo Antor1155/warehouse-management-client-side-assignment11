@@ -20,7 +20,7 @@ const MyItems = ({ setNotFoundPage }) => {
     const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
-        document.body.style = 'background:rgb(240, 238, 238)';
+        document.body.style = 'background:rgb(106 140 112)';
         try {
             fetch(`https://calm-erin-dibbler-cap.cyclic.app/myItem?email=${user?.email}`, {
                 headers: {
@@ -57,7 +57,7 @@ const MyItems = ({ setNotFoundPage }) => {
     }
 
     return (
-        <div className='myItems text-center mt-5'>
+        <div className='myItems text-center mt-4'>
             <h2>All <span className='customRed'> {allProducts.length}</span> items added by user</h2>
             <h4><span className='customRed'>user:</span> {user?.email} </h4>
 
