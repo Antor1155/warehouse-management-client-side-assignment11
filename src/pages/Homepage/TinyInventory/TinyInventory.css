@@ -27,9 +27,11 @@
     height: 55px;
     border-radius: 50%;
 }
-tr{  
+
+.tinyIntevtoryTable tr{
     background-color: rgb(176 169 109);
     text-align: center;
+    border-bottom:2px solid rgba(117, 74, 74, 0.346) ;
 }
 th, td{
     padding-left: 15px;
