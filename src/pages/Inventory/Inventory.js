@@ -11,11 +11,15 @@ const Inventory = ({ setNotFoundPage }) => {
     const [product, setProduct] = useState({});
     const [responseOnUpdate, setResponseOnUpdate] = useState({});
 
+     // setting background color of boady
+     useEffect(() => {
+        document.body.style = 'background:rgb(145 158 77)';
+    })
+
     useEffect(() => {
         fetch(`https://calm-erin-dibbler-cap.cyclic.app/singleItem/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
-        document.body.style = 'background:rgb(240, 238, 238)';
     }, [, responseOnUpdate])
 
     // updating the item 
@@ -53,8 +57,8 @@ const Inventory = ({ setNotFoundPage }) => {
     return (
         <div className='container inventory'>
             <h2 className='text-center'>--Update and manage the product--</h2>
-            <div className='d-flex justify-content-around align-items-center my-5 pb-3'>
-                <img className='productDetailImg' src={product?.image} alt="product" />
+            <div className='d-md-flex justify-content-around align-items-center my-5 pb-3'>
+                <img className='d-block productDetailImg' src={product?.image} alt="product" />
                 <div>
                     <p><strong> Name: </strong> {product?.name}</p>
                     <p><strong> Price: </strong> <span className='customRed'>$ </span>{product?.price}</p>

@@ -8,4 +8,21 @@
     width: 250px;
     height: 250px;
     border-radius: 25px;
+
+    box-shadow: 0 0 20px 7px black;
+}
+
+.inventory > div > div{
+    background-color: rgba(209, 203, 203, 0.227);
+    padding: 2rem;
+    border-radius: 10%;
+    box-shadow: 0 0 10px 1px black;
+}
+
+
+@media (max-width:500px) {
+    .productDetailImg{
+        margin: auto;
+        margin-bottom: 1rem;
+    }
 }
