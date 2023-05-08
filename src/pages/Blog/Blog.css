@@ -2,12 +2,12 @@
     color: white;
     /* background-color: rgba(15, 50, 50, 0.323); */
     background-image: linear-gradient(black, rgba(18, 63, 63, 0.323) 10%,rgba(18, 63, 63, 0.323) 90%, black);
-    padding: 2rem;
+    padding: 1rem 2rem;
     border: none;
 }
 .blog p:nth-child(2n){
     font-style: italic;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-align: justify;
 }
 .blog p:nth-child(2n-1){

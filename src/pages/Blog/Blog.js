@@ -7,7 +7,7 @@ const Blog = ({setNotFoundPage}) => {
         document.body.style = 'background:black;';
     },[])
     return (
-        <div className='blog mx-auto mt-4 text-center'>
+        <div className='blog mx-auto text-center'>
             <h2 className='mb-4'> Blogs</h2>
             <div>
                 <p> <strong className='pe-3 ques'>Ques: </strong> Difference between Javascript and nodejs</p>

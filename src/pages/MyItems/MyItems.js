@@ -12,15 +12,15 @@ const MyItems = ({ setNotFoundPage }) => {
     const [deleted, setDeleted] = useState({})
     const [user] = useAuthState(auth);
 
-    // setting fetch reply 
-
-
+    // setting background color of boady
+    useEffect(()=>{
+        document.body.style = 'background:rgb(106 140 112)';
+    })
 
     // getting all the products 
     const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
-        document.body.style = 'background:rgb(106 140 112)';
         try {
             fetch(`https://calm-erin-dibbler-cap.cyclic.app/myItem?email=${user?.email}`, {
                 headers: {

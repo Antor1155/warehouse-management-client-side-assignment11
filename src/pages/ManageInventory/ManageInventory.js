@@ -9,12 +9,17 @@ const ManageInventory = ({ setNotFoundPage }) => {
     const [allProducts, setAllProducts] = useState([]);
     const [deleted, setDeleted] = useState({})
 
+    // setting background color of boady
+    useEffect(() => {
+        document.body.style = 'background:rgb(106 140 112)';
+    })
+    
     // getting all product to manage 
     useEffect(() => {
         fetch("https://calm-erin-dibbler-cap.cyclic.app/manageAll")
             .then(res => res.json())
             .then(data => setAllProducts(data))
-        document.body.style = 'background:rgb(106 140 112)';
+
     }, [, deleted])
 
 
@@ -23,16 +28,16 @@ const ManageInventory = ({ setNotFoundPage }) => {
 
         const confirm = window.confirm("really want to delete", id);
         if (confirm) {
-            fetch(`https://calm-erin-dibbler-cap.cyclic.app/deleteItem/${id}`,{
-                method:'delete'
+            fetch(`https://calm-erin-dibbler-cap.cyclic.app/deleteItem/${id}`, {
+                method: 'delete'
             })
                 .then(res => res.json())
                 .then(data => setDeleted(data));
         }
 
     }
-    if(!allProducts.length){
-        return(<Loading></Loading>)
+    if (!allProducts.length) {
+        return (<Loading></Loading>)
     }
 
     return (
