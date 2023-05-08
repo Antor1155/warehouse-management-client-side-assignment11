@@ -14,9 +14,10 @@ const Login = ({ setNotFoundPage }) => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    useEffect(() => {
-        document.body.style = 'background:rgb(240, 238, 238)';
-    }, [])
+     // setting background color of boady
+     useEffect(() => {
+        document.body.style = 'background:rgb(106 140 112)';
+    })
 
     // sign in with email password
     const [
@@ -71,14 +72,14 @@ const Login = ({ setNotFoundPage }) => {
                     <label className='d-block'>password </label>
                     <input type="text" name="password" placeholder='password' required />
                     <br />
-                    <input className='submitBtn btn mx-auto d-block' type="submit" value='Login' />
+                    <input className='btn btn-primary mt-3 mx-auto d-block' type="submit" value='Login' />
                 </form>
             </div>
             <div className='GoogleBtnDiv'>
                 <p>continue with <button onClick={handleGoogleSignIn} className='border-0'><img src={googleImg} alt="google" /><span className='fs-5 fw-bold'> Google</span></button></p>
             </div>
 
-            <p className='text-center'>new to the side? <Link to='/register'>Register </Link></p>
+            <p className='text-center'>new to the side? <Link to='/register' className='text-warning'>Register </Link></p>
         </div>
     );
 };

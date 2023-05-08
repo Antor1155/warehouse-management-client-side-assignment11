@@ -14,9 +14,10 @@ const Register = ({ setNotFoundPage }) => {
 
     const [sendEmailVerification] = useSendEmailVerification(auth);
 
-    useEffect(() => {
-        document.body.style = 'background:rgb(240, 238, 238)';
-    }, [])
+     // setting background color of boady
+     useEffect(() => {
+        document.body.style = 'background:rgb(106 140 112)';
+    })
 
     const [
         createUserWithEmailAndPassword,
@@ -65,8 +66,8 @@ const Register = ({ setNotFoundPage }) => {
             {error || googleError ?
                 <h3 className='text-center text-danger'>error : {commonError.message}</h3> : ""
             }
-            <h2 className='text-center my-3'> We welcome <span className='customRed'> you with all </span> our heart</h2>
-            <h5 className='text-center mt-5 mb-4'>Register please</h5>
+            <h2 className='text-center my-2'> We welcome <span className='customRed'> you with all </span> our heart</h2>
+            <h5 className='text-center mt-4 mb-4'>Register please</h5>
 
             <div className='d-flex justify-content-center'>
                 <form className='loginForm' onSubmit={handleFormSubmit}>
@@ -75,9 +76,9 @@ const Register = ({ setNotFoundPage }) => {
                     <label className='d-block'>password </label>
                     <input className='mb-3' type="text" name="password" placeholder='password' required />
                     <br />
-                    <input className="form-check-input me-3" type="checkbox" required /><label className='text-primary'>I accept all terms</label>
+                    <input className="form-check-input me-3" type="checkbox" required /><label className='text-info'>I accept all terms</label>
 
-                    <input className='submitBtn btn  text-black mx-auto d-block mt-4' type="submit" value='Register' />
+                    <input className='btn btn-info  text-black mx-auto d-block mt-4' type="submit" value='Register' />
                 </form>
             </div>
 
@@ -85,7 +86,7 @@ const Register = ({ setNotFoundPage }) => {
                 <p>continue with <button onClick={handleGoogleSignIn} className='border-0'><img src={googleImg} alt="google" /><span className='fs-5 fw-bold'> Google</span></button></p>
             </div>
 
-            <p className='text-center'>Already have an account?  <Link className='ps-2' to='/login'>Login </Link></p>
+            <p className='text-center'>Already have an account?  <Link className='ps-2 text-warning' to='/login'>Login </Link></p>
         </div>
     );
 };
