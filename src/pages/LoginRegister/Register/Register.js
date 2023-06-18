@@ -87,6 +87,12 @@ const Register = ({ setNotFoundPage }) => {
             </div>
 
             <p className='text-center'>Already have an account?  <Link className='ps-2 text-warning' to='/login'>Login </Link></p>
+
+            <div className='text-center'>
+                <p className='text-success'>Can use demo account to login</p>
+                <p><span className='text-warning'>Email: </span>md.antor1155job@gmail.com</p>
+                <p><span className='text-warning'>password: </span>tttt89*</p>
+            </div>
         </div>
     );
 };
