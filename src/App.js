@@ -26,7 +26,6 @@ function App() {
   let appref = useRef();
 
   useEffect(() => {
-    console.log(location)
     if (location.pathname.endsWith("/") || location.pathname.endsWith("/home")) {
       appref.current.style.background = "black"
     } else if(location.pathname.endsWith("/blogs")){
