@@ -16,6 +16,7 @@ import Register from './pages/LoginRegister/Register/Register';
 import Loading from './pages/shared/Loading/Loading';
 import RequireAuth from './utilities/RequireAuth';
 import banner1 from "./Images/Background/skybackground.jpg";
+import banner2 from "./Images/Background/backgroundOptional.png"
 
 function App() {
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
@@ -28,8 +29,12 @@ function App() {
     console.log(location)
     if (location.pathname.endsWith("/") || location.pathname.endsWith("/home")) {
       appref.current.style.background = "black"
-    } else {
-      appref.current.style.backgroundImage = `url(${banner1})`
+    } else if(location.pathname.endsWith("/blogs")){
+        appref.current.style.backgroundImage = `url(${banner1})`
+    }else {
+      appref.current.style.backgroundImage = `url(${banner2})`;
+      appref.current.style.backgroundPosition = `center`;
+
     }
 
   }, [location])

@@ -3,9 +3,6 @@ import "./Blog.css"
 
 const Blog = ({setNotFoundPage}) => {
     setNotFoundPage(false);
-    useEffect(()=>{
-        document.body.style = 'background:black;';
-    },[])
     return (
         <div className='blog mx-auto text-center'>
             <h2 className='mb-4'> Blogs</h2>

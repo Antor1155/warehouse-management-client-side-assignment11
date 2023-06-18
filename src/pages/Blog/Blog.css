@@ -4,6 +4,7 @@
     background-image: linear-gradient(black, rgba(18, 63, 63, 0.323) 10%,rgba(18, 63, 63, 0.323) 90%, black);
     padding: 1rem 2rem;
     border: none;
+    padding: 0 10%;
 }
 .blog p:nth-child(2n){
     font-style: italic;
