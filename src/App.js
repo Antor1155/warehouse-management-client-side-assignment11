@@ -1,12 +1,12 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Homepage from './pages/Homepage/Home/Homepage';
 import NotFound from './pages/shared/NotFound/NotFound';
 import MyNav from './pages/shared/MyNav/MyNav';
 import Footer from './pages/shared/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Blog from './pages/Blog/Blog';
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
 import AddItem from './pages/AddItem/AddItem';
 import Inventory from './pages/Inventory/Inventory';
@@ -15,15 +15,29 @@ import Login from './pages/LoginRegister/Login/Login';
 import Register from './pages/LoginRegister/Register/Register';
 import Loading from './pages/shared/Loading/Loading';
 import RequireAuth from './utilities/RequireAuth';
+import banner1 from "./Images/Background/skybackground.jpg";
 
 function App() {
   // conditional rendering of footer and header in other pages than 404 pages, all kinds
   const [notFoundPage, setNotFoundPage] = useState(false);
 
+  let location = useLocation();
+  let appref = useRef();
+
+  useEffect(() => {
+    console.log(location)
+    if (location.pathname.endsWith("/") || location.pathname.endsWith("/home")) {
+      appref.current.style.background = "black"
+    } else {
+      appref.current.style.backgroundImage = `url(${banner1})`
+    }
+
+  }, [location])
+
   return (
-    <div className="App" style={{background: "black"}}>
+    <div className="App" ref={appref}>
       <MyNav></MyNav>
-            
+
       <Routes>
         <Route path="/" element={<Homepage ></Homepage>}></Route>
         <Route path="/home" element={<Homepage setNotFoundPage={setNotFoundPage}></Homepage>}></Route>

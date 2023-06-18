@@ -8,11 +8,6 @@ const ManageInventory = ({ setNotFoundPage }) => {
 
     const [allProducts, setAllProducts] = useState([]);
     const [deleted, setDeleted] = useState({})
-
-    // setting background color of boady
-    useEffect(() => {
-        document.body.style = 'background:rgb(106 140 112)';
-    })
     
     // getting all product to manage 
     useEffect(() => {

@@ -12,7 +12,6 @@ const Homepage = (props) => {
 
     const [products, setproducts] = useState([]);
     useEffect(() => {
-        document.body.style = 'background:black;';
         fetch('https://calm-erin-dibbler-cap.cyclic.app/home')
             .then(res => res.json())
             .then(data => setproducts(data));
