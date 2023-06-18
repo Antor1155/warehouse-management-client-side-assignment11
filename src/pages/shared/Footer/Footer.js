@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Footer.css";
+import banner1 from "../../../Images/Background/skybackground.jpg";
 
 const Footer = () => {
     return (
-        <div className='footer mt-3'>
+        <div className='footer' style={{
+            backgroundImage: `url(${banner1})`,
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
+        }}>
             <div className='horizontalLine'></div>
             <div className='d-flex justify-content-evenly'>
                 <a target="_blank" rel="noreferrer" href="https://www.facebook.com/md.antor.16">
