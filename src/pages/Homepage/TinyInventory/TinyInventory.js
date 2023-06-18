@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link} from 'react-router-dom';
 import "./TinyInventory.css";
+import banner2 from "../../../Images/Background/backgroundOptional.png";
 
 
 const TinyInventory = (props) => {
     let products = props.products;
 
     return (
-        <div className='tinyInventory '>
-            <div className='gradientDivFromBlack'> </div>
-            <h1 className='sectionStart mb-4 text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
+        <div className='tinyInventory ' style={{
+            backgroundImage: `url(${banner2})`}}>
+            <h1 className='sectionStart mb-4 pt-4 text-white text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
 
             <table className='tinyIntevtoryTable'>
                 <tbody>

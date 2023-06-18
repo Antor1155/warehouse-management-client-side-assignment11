@@ -1,17 +1,14 @@
 .tinyInventory{
-   background-color: rgb(106 140 112);
+   background-attachment: fixed;
+   background-position: center;
+   
 }
-.gradientDivFromBlack{
-    background-image: linear-gradient(black 40%, rgb(106 140 112));
-    height: 50px;
-}
+
 .gradientDivFromWhite{
     background-image: linear-gradient(rgb(106 140 112) 40%, black);
     height: 50px;
 }
-.sectionStart{
-    margin-top: 1rem;
-}
+
 .tinyIntevtoryTable{
     margin: auto;
     margin-top: 30px;
@@ -26,10 +23,12 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
+
+    opacity: .8;
 }
 
 .tinyIntevtoryTable tr{
-    background-color: rgb(176 169 109);
+    background-color: rgba(172, 167, 119, 0.814);
     text-align: center;
     border-bottom:2px solid rgba(117, 74, 74, 0.346) ;
 }

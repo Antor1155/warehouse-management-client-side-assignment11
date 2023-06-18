@@ -1,5 +1,5 @@
 import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../utilities/firebase.init';
@@ -13,7 +13,7 @@ const MyItems = ({ setNotFoundPage }) => {
     const [user] = useAuthState(auth);
 
     // setting background color of boady
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         document.body.style = 'background:rgb(106 140 112)';
     })
 

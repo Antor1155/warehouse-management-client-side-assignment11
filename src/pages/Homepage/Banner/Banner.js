@@ -8,10 +8,7 @@ const Banner = () => {
         <div className='bannerContainer text-center'>
 
             <div className='bannerContent' style={{
-                backgroundImage: `url(${banner2})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: '70%'}}>
+                backgroundImage: `url(${banner2})`}}>
 
                 <div>
                     <img className='logo mx-auto' src={logo} alt="" />

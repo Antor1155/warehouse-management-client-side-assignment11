@@ -24,7 +24,7 @@ const Homepage = (props) => {
         <div className='homepage'>
            
             <Banner></Banner>
-            {products.length==0 ? <Loading></Loading>: <TinyInventory products={products}></TinyInventory>}
+            {products.length===0 ? <Loading></Loading>: <TinyInventory products={products}></TinyInventory>}
             
             <Graphs products={products}></Graphs>
             <Management></Management>
