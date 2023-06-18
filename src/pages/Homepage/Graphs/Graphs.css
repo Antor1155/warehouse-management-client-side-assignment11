@@ -5,13 +5,13 @@
 }
 
 .graphs p{
-    background-color: rgb(185, 178, 116);
+    background-color: rgba(39, 39, 31, 0.669);
 }
 .chart {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(185, 178, 116);
+    background-color: rgba(172, 167, 119, 0.814);
     border: .5px solid black;
     border-radius: 5px;
 

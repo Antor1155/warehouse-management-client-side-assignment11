@@ -9,7 +9,10 @@ const TinyInventory = (props) => {
 
     return (
         <div className='tinyInventory ' style={{
-            backgroundImage: `url(${banner2})`}}>
+            backgroundImage: `url(${banner2})`,
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",}}>
+                
             <h1 className='sectionStart mb-4 pt-5 text-white text-center'>Visualization <span className='customRed'>Of</span> Intentory</h1>
 
             <table className='tinyIntevtoryTable'>

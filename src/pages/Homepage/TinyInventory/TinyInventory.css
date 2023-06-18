@@ -1,6 +1,4 @@
 .tinyInventory{
-   background-attachment: fixed;
-   background-position: center;
    
 }
 
@@ -52,7 +50,7 @@ tr .customRed{
 .manageInventoryBtn{
     border: none;
     border-radius: 10px;
-    background-color: rgb(120, 214, 236);
+    background-color: rgba(120, 215, 236, 0.795);
 }
 .manageInventoryBtn:hover{
     background-color: rgb(44, 111, 126);

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import "./Graphs.css"
+import "./Graphs.css";
+import banner2 from "../../../Images/Background/backgroundOptional.png";
+
 
 const Graphs = ({ products }) => {
     return (
-        <div className='graphs'>
+        <div className='graphs text-white' style={{
+            backgroundImage: `url(${banner2})`,
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center"}}>
+
             <h1>Total <span className='customRed'>sotred</span> Amount</h1>
             <p>visualization of <strong className='customRed'>{products.length}</strong> types of producs: available</p>
             <ResponsiveContainer className='chart my-4' width="70%" height={450}>
@@ -25,8 +31,8 @@ const Graphs = ({ products }) => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="quantity" fill="#6661c9" />
-                    <Bar dataKey="price" fill="#3b5c80" />
+                    <Bar dataKey="quantity" fill="#000000" />
+                    <Bar dataKey="price" fill="#145D14" />
                 </BarChart>
               </ResponsiveContainer>
             
