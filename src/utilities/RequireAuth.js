@@ -14,10 +14,6 @@ const RequireAuth = ({ children}) => {
 
     const notify = () => toast.success('Email verification send',{duration:2000});
 
-    useEffect(() => {
-        document.body.style = 'background:rgb(240, 238, 238)';
-    }, [])
-
     if(loading){
         return <Loading></Loading>
     }
@@ -33,7 +29,7 @@ const RequireAuth = ({ children}) => {
 
     if(user){
         if(!user.emailVerified){
-            return (<div className='emailVerification my-5 text-center p'>
+            return (<div className='emailVerification my-5 text-center p text-white'>
                     <Toaster></Toaster>
                     <h2>your email is <span className='customRed fs-1'><strong >not</strong> </span> verified.....</h2>
                     <p>please verify email and <span className='text-danger fs-3'>reload the page</span>......</p>

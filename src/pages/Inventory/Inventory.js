@@ -55,7 +55,7 @@ const Inventory = ({ setNotFoundPage }) => {
         return(<Loading></Loading>)
     }
     return (
-        <div className='container inventory'>
+        <div className='container inventory text-white'>
             <h2 className='text-center'>--Update and manage the product--</h2>
             <div className='d-md-flex justify-content-around align-items-center my-5 pb-3'>
                 <img className='d-block productDetailImg' src={product?.image} alt="product" />

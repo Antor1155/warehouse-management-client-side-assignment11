@@ -27,13 +27,15 @@ function App() {
 
   useEffect(() => {
     // changing background based on location 
-    if (location.pathname.endsWith("/") || location.pathname.endsWith("/home")) {
+    let currentPath = location.pathname
+    if (currentPath.endsWith("/") || currentPath.endsWith("/home")) {
       appref.current.style.background = "black"
-    } else if(location.pathname.endsWith("/blogs")){
+    } else if(currentPath.endsWith("/blogs") || currentPath.endsWith("/login") || currentPath.endsWith("/register")){
         appref.current.style.backgroundImage = `url(${banner1})`
     }else {
       appref.current.style.backgroundImage = `url(${banner2})`;
     }
+
     appref.current.style.backgroundPosition = `center`;
     appref.current.style.backgroundAttachment = `fixed`;
 

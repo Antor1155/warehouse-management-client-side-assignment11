@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import googleImg from "../../../Images/logos/google.png";
@@ -14,8 +14,8 @@ const Login = ({ setNotFoundPage }) => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-     // setting background color of boady
-     useEffect(() => {
+    // setting background color of boady
+    useEffect(() => {
         document.body.style = 'background:rgb(106 140 112)';
     })
 
@@ -60,11 +60,12 @@ const Login = ({ setNotFoundPage }) => {
     }
 
     return (
-        <div className='loginPage mt-4 mb-5 pb-5'>
+        <div className='loginPage mt-4 mb-5 pb-5 text-white'>
             {error || googleError ?
                 <h3 className='text-center text-danger'>error : {commonError.message}</h3> : ""
             }
             <h2 className='text-center my-3'>Welcome Back</h2>
+
             <div className='d-flex justify-content-center'>
                 <form className='loginForm' onSubmit={handleFormSubmit}>
                     <label className='d-block '>email </label>
@@ -72,14 +73,21 @@ const Login = ({ setNotFoundPage }) => {
                     <label className='d-block'>password </label>
                     <input type="text" name="password" placeholder='password' required />
                     <br />
-                    <input className='btn btn-primary mt-3 mx-auto d-block' type="submit" value='Login' />
+                    <input className='btn btn-primary my-3 mx-auto d-block' type="submit" value='Login' />
                 </form>
             </div>
-            <div className='GoogleBtnDiv'>
+
+            <p className='text-center mb-0'>new to the side? <Link to='/register' className='text-warning'>Register </Link></p>
+
+            <div className='GoogleBtnDiv '>
                 <p>continue with <button onClick={handleGoogleSignIn} className='border-0'><img src={googleImg} alt="google" /><span className='fs-5 fw-bold'> Google</span></button></p>
             </div>
 
-            <p className='text-center'>new to the side? <Link to='/register' className='text-warning'>Register </Link></p>
+            <div className='text-center'>
+                <p>Can use demo account</p>
+                <p><span className='text-warning'>Email: </span>md.antor1155job@gmail.com</p>
+                <p><span className='text-warning'>password: </span>tttt89*</p>
+            </div>
         </div>
     );
 };

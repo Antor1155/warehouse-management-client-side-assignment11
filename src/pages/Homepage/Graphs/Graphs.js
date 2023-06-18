@@ -10,7 +10,8 @@ const Graphs = ({ products }) => {
         <div className='graphs text-white' style={{
             backgroundImage: `url(${banner2})`,
             backgroundAttachment: "fixed",
-            backgroundPosition: "center"}}>
+            backgroundPosition: "center",
+            backgroundSize: "50%"}}>
 
             <h1>Total <span className='customRed'>sotred</span> Amount</h1>
             <p>visualization of <strong className='customRed'>{products.length}</strong> types of producs: available</p>

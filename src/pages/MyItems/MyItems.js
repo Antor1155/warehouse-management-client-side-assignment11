@@ -1,9 +1,10 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import auth from '../../utilities/firebase.init';
-import "./MyItems.css"
+import "./MyItems.css";
+import Loading from '../shared/Loading/Loading';
 
 const MyItems = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
@@ -13,7 +14,7 @@ const MyItems = ({ setNotFoundPage }) => {
     const [user] = useAuthState(auth);
 
     // getting all the products 
-    const [allProducts, setAllProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState(null);
 
     useEffect(() => {
         try {
@@ -26,6 +27,7 @@ const MyItems = ({ setNotFoundPage }) => {
                 .then(data => {
                     if (!data.message) {
                         setAllProducts(data);
+                        
                     }
                 })
         }
@@ -49,6 +51,10 @@ const MyItems = ({ setNotFoundPage }) => {
                 .then(res => res.json())
                 .then(data => setDeleted(data));
         }
+    }
+
+    if(!allProducts){
+        return <Loading></Loading>
     }
 
     return (
@@ -75,7 +81,9 @@ const MyItems = ({ setNotFoundPage }) => {
                             <td>$ {product.price}</td>
                             <td>{product.supplierName}</td>
                             <td>{product.quantity}</td>
-                            <td> <button onClick={() => handleDelete(product._id)} className='customButton px-3'> Delete</button></td>
+                            <td> <button onClick={() => handleDelete(product._id)} className='customButton px-3'> Delete</button>
+                            <Link to={`/inventory/${product._id}`}> <button className='updateButton px-2'> Update</button></Link>
+                            </td>
                         </tr>)
                     }
                 </tbody>

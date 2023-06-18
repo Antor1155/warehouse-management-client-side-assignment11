@@ -62,7 +62,7 @@ const Register = ({ setNotFoundPage }) => {
         commonError = error || googleError;
     }
     return (
-        <div className='loginPage mt-4 mb-5 pb-5'>
+        <div className='loginPage mt-4 mb-5 pb-5 text-white'>
             {error || googleError ?
                 <h3 className='text-center text-danger'>error : {commonError.message}</h3> : ""
             }

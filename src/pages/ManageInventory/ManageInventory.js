@@ -57,7 +57,9 @@ const ManageInventory = ({ setNotFoundPage }) => {
                             <td>$ {product.price}</td>
                             <td>{product.supplierName}</td>
                             <td>{product.quantity}</td>
-                            <td> <button onClick={() => handleDelete(product._id)} className='customButton px-3'> Delete</button></td>
+                            <td> <button onClick={() => handleDelete(product._id)} className='customButton px-3'> Delete</button>
+                            <Link to={`/inventory/${product._id}`}> <button className='updateButton px-2'> Update</button></Link>
+                            </td>
                         </tr>)
                     }
                 </tbody>

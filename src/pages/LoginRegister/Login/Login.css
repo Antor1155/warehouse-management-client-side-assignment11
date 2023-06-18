@@ -3,11 +3,13 @@
     width: 40px;
 }
 .GoogleBtnDiv{
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.666);
     display: flex;
     justify-content: center;
     padding-top: 1rem;
-    margin: 2rem 0 1.5rem 0;
+
+    color: black;
+    margin: .5rem 0;
 }
 .GoogleBtnDiv button{
     background-color: transparent;
