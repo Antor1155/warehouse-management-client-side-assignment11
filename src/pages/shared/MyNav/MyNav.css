@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(20, 28, 20, 0.837);
+    background-color: rgba(20, 28, 20, .95);
     padding-bottom: 1rem;
     padding-right: 2rem; 
     padding-top: .7rem;

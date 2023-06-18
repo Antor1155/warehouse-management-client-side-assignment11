@@ -21,7 +21,7 @@ function App() {
   const [notFoundPage, setNotFoundPage] = useState(false);
 
   return (
-    <div className="App">
+    <div className="App" style={{background: "black"}}>
       <MyNav></MyNav>
             
       <Routes>
