@@ -57,7 +57,7 @@ const Inventory = ({ setNotFoundPage }) => {
     return (
         <div className='container inventory text-white'>
             <h2 className='text-center'>--Update and manage the product--</h2>
-            <div className='d-md-flex justify-content-around align-items-center my-5 pb-3'>
+            <div className='d-md-flex justify-content-around align-items-center mt-5 pb-3'>
                 <img className='d-block productDetailImg' src={product?.image} alt="product" />
                 <div>
                     <p><strong> Name: </strong> {product?.name}</p>
@@ -79,14 +79,14 @@ const Inventory = ({ setNotFoundPage }) => {
             </div>
 
             {/* restock form below  */}
-            <div className='restockSection text-center mx-auto my-5 py-5'>
+            <div className='restockSection text-center mx-auto pb-5'>
                 <h4 className='mb-4'>product <span className='customRed'>Restock</span> here..</h4>
                 <form onSubmit={handleResockForm} >
                     <input type="number" min="0" name='restockNumber' required/>
                     <input className='btn  btn-success ms-3' type="submit" />
                 </form>
             </div>
-            <div className='text-center pb-5 mb-5'>
+            <div className='text-center pb-5 mb-5 mt-2'>
                 <Link to="/manageInventory">
                     <button className='manageInventoryBtn py-2  px-2 mx-auto'><strong> Manage all Inventory</strong></button>
                 </Link>

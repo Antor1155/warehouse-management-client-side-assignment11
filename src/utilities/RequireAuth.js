@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import toast, { Toaster } from 'react-hot-toast';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -6,6 +5,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import Loading from '../pages/shared/Loading/Loading';
 import auth from './firebase.init';
 import getJwt from './getJwt';
+import "./RequireAuth.css"
 
 const RequireAuth = ({ children}) => {
     let location = useLocation();
