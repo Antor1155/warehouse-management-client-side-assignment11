@@ -26,16 +26,19 @@ function App() {
   let appref = useRef();
 
   useEffect(() => {
+    // changing background based on location 
     if (location.pathname.endsWith("/") || location.pathname.endsWith("/home")) {
       appref.current.style.background = "black"
     } else if(location.pathname.endsWith("/blogs")){
         appref.current.style.backgroundImage = `url(${banner1})`
     }else {
       appref.current.style.backgroundImage = `url(${banner2})`;
-      appref.current.style.backgroundPosition = `center`;
-
     }
+    appref.current.style.backgroundPosition = `center`;
+    appref.current.style.backgroundAttachment = `fixed`;
 
+    // when loation changed scroll to top 
+    document.documentElement.scrollTop = 0;
   }, [location])
 
   return (

@@ -18,11 +18,11 @@
     border: 1px solid rgb(78, 210, 151);
     text-align: center;
     width: 40%;
+    background-color: antiquewhite;
 }
 .submitBtn{
     margin-top: 15px;
 }
 .submitBtn:hover{
-    background-color: rgb(196,28,29); 
     color: white;
 }

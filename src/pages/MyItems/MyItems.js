@@ -12,11 +12,6 @@ const MyItems = ({ setNotFoundPage }) => {
     const [deleted, setDeleted] = useState({})
     const [user] = useAuthState(auth);
 
-    // setting background color of boady
-    useLayoutEffect(()=>{
-        document.body.style = 'background:rgb(106 140 112)';
-    })
-
     // getting all the products 
     const [allProducts, setAllProducts] = useState([]);
 
@@ -58,8 +53,8 @@ const MyItems = ({ setNotFoundPage }) => {
 
     return (
         <div className='myItems text-center mt-4'>
-            <h2>All <span className='customRed'> {allProducts.length}</span> items added by user</h2>
-            <h4><span className='customRed'>user:</span> {user?.email} </h4>
+            <h2 className='text-white'>All <span className='customRed'> {allProducts.length}</span> items added by user</h2>
+            <h4 className='text-white'><span className='customRed'>user:</span> {user?.email.split("@")[0]} </h4>
 
             <table className='tinyIntevtoryTable mt-5'>
                 <tbody>

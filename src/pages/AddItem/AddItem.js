@@ -6,11 +6,6 @@ import './AddItem.css'
 
 const AddItem = ({ setNotFoundPage }) => {
     setNotFoundPage(false);
-    
-    // setting background color of boady
-    useEffect(() => {
-        document.body.style = 'background:rgb(106 140 112)';
-    })
 
     const [result, setResult] = useState([]);
     const [user] = useAuthState(auth);
@@ -46,7 +41,7 @@ const AddItem = ({ setNotFoundPage }) => {
     }
     return (
         <div className='addItems text-center mx-auto pt-2 pb-4'>
-            <h2 className='my-3'>please add <span className='customRed'>Items Of</span>  your choice</h2>
+            <h2 className='my-3 text-white'>please add <span className='customRed'>Items Of</span>  your choice</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='ImageUrl' name='image' required />
                 <input type="text" placeholder='product name' name='name' required />
@@ -55,7 +50,7 @@ const AddItem = ({ setNotFoundPage }) => {
                 <textarea placeholder='short description' name='description' required></textarea>
                 <input type="text" placeholder='supplierName' name='supplierName' required />
                 <input type="number" placeholder='quantity' min='1' name='quantity' required />
-                <input className='submitBtn bg-info px-3 my-3' type="submit" style={{ width: "12rem" }} />
+                <input className='submitBtn bg-info px-3 my-3' type="submit" style={{ width: "12rem", opacity: ".9" }} />
             </form>
             <Toaster></Toaster>
         </div>
