@@ -17,6 +17,7 @@ A warehouse website for food company named: [food first warehoue](https://wareho
 # 
 * `server side used node js alogn with express js  `
 * `deployed in heroku `
+* `latest deployment on Cyclic `
 * `apis to verify and supply data `
 * `JESSON WEB TOKEN for authorization `
 
